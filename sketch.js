@@ -98,7 +98,7 @@ function preload(){
   amb = loadImage("amb.gif");
   late = loadImage("delayed.png");
   // promise screen
-  promiseT = loadImage("giffycanvas - 2025-10-28T143742.762.gif")
+  promiseT = loadImage("giffycanvas - 2025-10-29T083935.786.gif")
   promiseP = loadImage("lastscreenF (2).png");
   promiseS = loadImage("lastscreenF (1).png");
 }
