@@ -99,8 +99,8 @@ function preload(){
   late = loadImage("delayed.png");
   // promise screen
   promiseT = loadImage("giffycanvas - 2025-10-29T083935.786.gif")
-  promiseP = loadImage("lastscreenF (2).png");
-  promiseS = loadImage("Promiseseal.png");
+  promiseP = loadImage("PromisesealF.png");
+  promiseS = loadImage("PromisesealedF.png");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
