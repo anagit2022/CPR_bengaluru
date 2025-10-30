@@ -59,7 +59,7 @@ lastTouchElapsed = 0;
 
   
 function preload(){
-  begin_screen = loadImage("begin_screen.png");
+  begin_screen = loadImage("begin (1).png");
   intro_screen = loadImage("intro_screen.png");
   // check for danger if safe or not before cprR(esponse)
   cprD = loadImage("cprD.png");
