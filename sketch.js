@@ -111,7 +111,7 @@ function setup(){
   console.log(breath_no)
   imageMode(CENTER);
   // begin button
-  beginx = windowWidth*0.3;
+  beginx = windowWidth*0.2;
   beginy = windowHeight*0.8;
   beginw = 142;
   beginh = 47;
