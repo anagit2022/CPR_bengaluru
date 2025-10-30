@@ -407,6 +407,7 @@ function mousePressed(){
       mouseY < yesy + yesh
     ) {
       currentState = "cprR";
+      response_time = millis();
       console.log(currentState);
       }else if (
       mouseX > nox &&
