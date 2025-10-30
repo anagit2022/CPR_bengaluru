@@ -350,7 +350,7 @@ function mousePressed(){
       mouseX > rajax &&
       mouseX < rajax + rajaw &&
       mouseY > rajay &&
-      mouseY < rajasy + rajah
+      mouseY < rajay + rajah
     ) {
       currentState = "intro";
       genderState = 1;
