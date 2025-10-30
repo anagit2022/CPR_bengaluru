@@ -333,16 +333,6 @@ function mousePressed(){
       currentState = "gender_screen";
       console.log(currentState);
       }
-  }else if(currentState == "intro"){
-    if (
-      mouseX > nextx &&
-      mouseX < nextx + nextw &&
-      mouseY > nexty &&
-      mouseY < nexty + nexth
-    ) {
-      currentState = "cprD";
-      console.log(currentState);
-      }
   }else if(currentState == "cprD"){
     if (
       mouseX > yesx &&
