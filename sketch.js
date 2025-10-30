@@ -117,8 +117,8 @@ function setup(){
   beginw = 142;
   beginh = 47;
   // raja button
-  rajax = windowWidth*0.1;
-  rajay = windowHeight*0.86;
+  rajax = windowWidth*0.11;
+  rajay = windowHeight*0.89;
   rajaw = 142;
   rajah = 47;
   // rani button
@@ -329,7 +329,7 @@ function draw(){
    text(" y : " + mouseY,80,40);
   text("width/2 : " + width ,120,40);
   text(" height/2 : " + height ,200,40);
-  text("g: "+genderState ,310,40);
+  text("g: "+genderState ,350,40);
   //______________________________________
   
 }
