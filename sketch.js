@@ -319,7 +319,11 @@ function draw(){
     image(promiseP,width/2,height/2);
     }else if(currentState === "promise_seal"){
     background("#F35F3C");
+    if(genderState === 1){
+      image(promiseSM,width/2,height/2);
+    }else if(genderState === 2){
     image(promiseS,width/2,height/2);
+    }
     }else if(currentState === "b_normal"){
     background("#F35F3C");
     image(normal_breath,width/2,height/2);
