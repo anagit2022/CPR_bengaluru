@@ -51,7 +51,7 @@ let diffGoal = 0;
 // win screens
 let win,aed,amb,late;
 // promise screen
-let promiseT,promiseP,promiseS,promiseD;
+let promiseT,promiseTM,promiseP,promisePM,promiseS,promiseSM,promiseDT,promiseDTM;
 let promise_time = 0;
 let promise_start=0;
 // track inactivity
@@ -101,10 +101,16 @@ function preload(){
   amb = loadImage("amb.gif");
   late = loadImage("delayed.png");
   // promise screen
-  promiseT = loadImage("giffycanvas - 2025-10-29T083935.786.gif")
+  promiseT = loadImage("giffycanvas - 2025-10-29T083935.786.gif");
+  promiseTM = loadImage("giffycanvas - 2025-10-29T161641.860.gif");
   promiseP = loadImage("PromisesealF.png");
+  promisePM = loadImage("PromisesealM.png");
   promiseS = loadImage("PromisesealedF.png");
-  promiseD = loadImage("giffycanvas - 2025-10-30T182842.692.gif");
+  promiseSM = loadImage("PromisesealedM.png");
+  promiseDT = loadImage("giffycanvas - 2025-10-30T194121.823.gif");
+  promiseDTM = loadImage("giffycanvas - 2025-10-30T182842.692.gif");
+  promiseDP = loadImage("PromisesealDF.png");
+  promiseDPM = loadImage("PromisesealDM.png");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
@@ -323,9 +329,13 @@ function draw(){
     }else if(currentState === "dcantsafe"){
     background("#F35F3C");
     image(dcantsafe,width/2,height/2);
-    }else if(currentState === "promiseD"){
+    }else if(currentState === "promiseDT"){
     background("#F35F3C");
-    image(promiseD,width/2,height/2);
+    if(genderState === 1){
+      image(promiseDTM,width/2,height/2);
+    }else if(genderState === 2){
+    image(promiseDT,width/2,height/2);
+    }
     }else if(currentState === "cpr_check_response"){
     background("#F35F3C");
     image(check_response ,width/2,height/2);
@@ -429,7 +439,7 @@ function mousePressed(){
       mouseY > nexty &&
       mouseY < nexty + nexth
     ) {
-      currentState = "promiseD";
+      currentState = "promiseDT";
       console.log(currentState);
       }
   }else if(currentState == "cpr_check_response"){
