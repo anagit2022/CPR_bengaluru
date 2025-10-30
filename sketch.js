@@ -3,6 +3,7 @@ let cprD;
 let cprR;
 let cprD_yes;
 let currentState = "begin";
+let genderState = 0;
 // check for cprR response
   let response_time = 0;
   let call_time = 0; 
@@ -115,6 +116,16 @@ function setup(){
   beginy = windowHeight*0.8;
   beginw = 142;
   beginh = 47;
+  // raja button
+  rajax = windowWidth*0.1;
+  rajay = windowHeight*0.86;
+  rajaw = 142;
+  rajah = 47;
+  // rani button
+  ranix = windowWidth*0.5;
+  raniy = windowHeight*0.86;
+  raniw = 142;
+  ranih = 47;
   // next button
   nextx= windowWidth*0.8;
   nexty= windowHeight*0.9;
@@ -331,6 +342,36 @@ function mousePressed(){
       mouseY < beginy + beginh
     ) {
       currentState = "gender_screen";
+      console.log(currentState);
+      }
+  }else if(currentState == "gender_screen"){
+    if (
+      mouseX > rajax &&
+      mouseX < rajax + rajaw &&
+      mouseY > rajay &&
+      mouseY < rajasy + rajah
+    ) {
+      currentState = "intro";
+      genderState = 1;
+      console.log(currentState);
+      }else if (
+      mouseX > ranix &&
+      mouseX < ranix + raniw &&
+      mouseY > raniy &&
+      mouseY < raniy + ranih
+    ) {
+      currentState = "intro";
+      genderState = 2;
+      console.log(currentState);
+      }
+  }else if(currentState == "intro"){
+    if (
+      mouseX > nextx &&
+      mouseX < nextx + nextw &&
+      mouseY > nexty &&
+      mouseY < nexty + nexth
+    ) {
+      currentState = "cprD";
       console.log(currentState);
       }
   }else if(currentState == "cprD"){
