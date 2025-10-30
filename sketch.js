@@ -1,4 +1,4 @@
-let begin_screen,intro_screen;
+let begin_screen,gender_screen,intro_screen;
 let cprD;
 let cprR;
 let cprD_yes;
@@ -60,6 +60,7 @@ lastTouchElapsed = 0;
   
 function preload(){
   begin_screen = loadImage("begin (1).png");
+  gender_screen = loadImage("f.png");
   intro_screen = loadImage("intro_screen.png");
   // check for danger if safe or not before cprR(esponse)
   cprD = loadImage("cprD.png");
@@ -189,6 +190,9 @@ function draw(){
   if(currentState=== "begin"){
     background("#F35F3C");
     image(begin_screen,width/2,height/2);
+  }else if(currentState === "gender_screen"){
+     background("#F35F3C");
+    image(gender_screen,width/2,height/2);
   }else if(currentState === "intro"){
      background("#F35F3C");
     image(intro_screen,width/2,height/2);
@@ -326,7 +330,7 @@ function mousePressed(){
       mouseY > beginy &&
       mouseY < beginy + beginh
     ) {
-      currentState = "intro";
+      currentState = "gender_screen";
       console.log(currentState);
       }
   }else if(currentState == "intro"){
