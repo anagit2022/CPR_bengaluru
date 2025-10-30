@@ -65,7 +65,7 @@ function preload(){
   intro_screen = loadImage("intro_screen.png");
   // check for danger if safe or not before cprR(esponse)
   cprD = loadImage("d.png");
-  cprR = loadImage("cprR.png");
+  cprR = loadImage("r.png");
   cprD_yes = loadImage("Dnot safe.png");
   dcantsafe = loadImage("Dcan't safe (3).png");
   check_response = loadImage("cprR1.png");
