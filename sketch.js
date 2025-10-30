@@ -454,6 +454,17 @@ function mousePressed(){
        promise_start = millis();
       console.log(currentState);
       }
+  }else if(currentState == "Promise_DP"){
+   if (
+      mouseX > promisex &&
+      mouseX < promisex + promisew &&
+      mouseY > promisey &&
+      mouseY < promisey + promiseh
+    ){
+      currentState = "promise_seal";
+      console.log(currentState);
+    }
+     
   }else if(currentState == "cpr_check_response"){
     if (
       mouseX > yesx &&
