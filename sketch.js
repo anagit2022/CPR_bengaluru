@@ -64,7 +64,7 @@ function preload(){
   gender_screen = loadImage("f.png");
   intro_screen = loadImage("intro_screen.png");
   // check for danger if safe or not before cprR(esponse)
-  cprD = loadImage("cprD.png");
+  cprD = loadImage("d.png");
   cprR = loadImage("cprR.png");
   cprD_yes = loadImage("not in safe place.png");
   check_response = loadImage("cprR1.png");
