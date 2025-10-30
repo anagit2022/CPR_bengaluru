@@ -51,7 +51,7 @@ let diffGoal = 0;
 // win screens
 let win,aed,amb,late;
 // promise screen
-let promiseT,promiseP,promiseS;
+let promiseT,promiseP,promiseS,promiseD;
 let promise_time = 0;
 let promise_start=0;
 // track inactivity
@@ -104,6 +104,7 @@ function preload(){
   promiseT = loadImage("giffycanvas - 2025-10-29T083935.786.gif")
   promiseP = loadImage("PromisesealF.png");
   promiseS = loadImage("PromisesealedF.png");
+  promiseD = loadImage("giffycanvas - 2025-10-30T182842.692.gif");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
@@ -322,6 +323,9 @@ function draw(){
     }else if(currentState === "dcantsafe"){
     background("#F35F3C");
     image(dcantsafe,width/2,height/2);
+    }else if(currentState === "promiseD"){
+    background("#F35F3C");
+    image(promiseD,width/2,height/2);
     }else if(currentState === "cpr_check_response"){
     background("#F35F3C");
     image(check_response ,width/2,height/2);
@@ -416,6 +420,16 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
       currentState = "dcantsafe";
+      console.log(currentState);
+      }
+  }else if(currentState == "dcantsafe"){
+    if (
+      mouseX > nextx &&
+      mouseX < nextx + nextw &&
+      mouseY > nexty &&
+      mouseY < nexty + nexth
+    ) {
+      currentState = "promiseD";
       console.log(currentState);
       }
   }else if(currentState == "cpr_check_response"){
