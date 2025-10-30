@@ -117,8 +117,8 @@ function setup(){
   beginw = 142;
   beginh = 47;
   // raja button
-  rajax = windowWidth*0.11;
-  rajay = windowHeight*0.89;
+  rajax = windowWidth*0.2;
+  rajay = windowHeight*0.86;
   rajaw = 142;
   rajah = 47;
   // rani button
