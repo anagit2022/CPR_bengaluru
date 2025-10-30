@@ -334,7 +334,7 @@ function draw(){
   text("width/2 : " + width ,120,40);
   text(" height/2 : " + height ,200,40);
   text("g: "+genderState ,350,40);
-   text("s: "+currentState ,350,180);
+   text("s: "+currentState ,200,180);
   //______________________________________
   
 }
