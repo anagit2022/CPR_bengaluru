@@ -336,6 +336,17 @@ function draw(){
     }else if(genderState === 2){
     image(promiseDT,width/2,height/2);
     }
+      if(millis() - promise_start >3000){
+      currentState = "promiseDP";
+    }
+    
+    }else if(currentState === "promiseDP"){
+    background("#F35F3C");
+    if(genderState === 1){
+      image(promiseDPM,width/2,height/2);
+    }else if(genderState === 2){
+    image(promiseDP,width/2,height/2);
+    }
     }else if(currentState === "cpr_check_response"){
     background("#F35F3C");
     image(check_response ,width/2,height/2);
@@ -440,6 +451,7 @@ function mousePressed(){
       mouseY < nexty + nexth
     ) {
       currentState = "promiseDT";
+       promise_start = millis();
       console.log(currentState);
       }
   }else if(currentState == "cpr_check_response"){
