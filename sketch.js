@@ -454,7 +454,7 @@ function mousePressed(){
        promise_start = millis();
       console.log(currentState);
       }
-  }else if(currentState == "Promise_DP"){
+  }else if(currentState == "promiseDP"){
    if (
       mouseX > promisex &&
       mouseX < promisex + promisew &&
