@@ -1,7 +1,7 @@
 let begin_screen,gender_screen,intro_screen;
 let cprD;
 let cprR;
-let cprD_yes;
+let cprD_yes,dcantsafe;
 let currentState = "begin";
 let genderState = 0;
 // check for cprR response
@@ -66,7 +66,8 @@ function preload(){
   // check for danger if safe or not before cprR(esponse)
   cprD = loadImage("d.png");
   cprR = loadImage("cprR.png");
-  cprD_yes = loadImage("not in safe place.png");
+  cprD_yes = loadImage("Dnot safe.png");
+  dcantsafe = loadImage("Dcan't safe (3).png");
   check_response = loadImage("cprR1.png");
 //call 108 or shout
   cprS = loadImage("call blank (1).png");
@@ -318,6 +319,9 @@ function draw(){
     }else if(currentState === "cprD_yes"){
     background("#F35F3C");
     image(cprD_yes,width/2,height/2);
+    }else if(currentState === "dcantsafe"){
+    background("#F35F3C");
+    image(dcantsafe,width/2,height/2);
     }else if(currentState === "cpr_check_response"){
     background("#F35F3C");
     image(check_response ,width/2,height/2);
@@ -409,7 +413,7 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-      currentState = "cprD_yes";
+      currentState = "dcantsafe";
       console.log(currentState);
       }
   }else if(currentState == "cpr_check_response"){
