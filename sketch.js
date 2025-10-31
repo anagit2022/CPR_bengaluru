@@ -226,6 +226,19 @@ function draw(){
       if(millis()-response_time >= 6000){
       currentState = "cpr_check_response";
       }
+    }else if(currentState === "cprB"){
+    background("#FFC5B7");
+    image(cprB,width/2,height/2);
+      if(millis() - breathe_time >10000 ){
+        currentState = "breath_Check";
+        console.log(currentState); 
+      }
+    }else if(currentState === "breath_Check"){
+    background("#F35F3C");
+    image(breath_check,width/2,height/2);
+    }else if(currentState === "check_b_type"){
+    background("#F35F3C");
+    image(check_b_type,width/2,height/2);
     }else if(currentState === "cprS"){
     background("#F35F3C");
     image(cprS,width/2,height/2);
@@ -248,19 +261,6 @@ function draw(){
     }else if(currentState === "cprA"){
     background("#F35F3C");
     image(cprA,width/2,height/2);
-    }else if(currentState === "cprB"){
-    background("#FFC5B7");
-    image(cprB,width/2,height/2);
-      if(millis() - breathe_time >10000 ){
-        currentState = "breath_Check";
-        console.log(currentState); 
-      }
-    }else if(currentState === "breath_Check"){
-    background("#F35F3C");
-    image(breath_check,width/2,height/2);
-    }else if(currentState === "check_b_type"){
-    background("#F35F3C");
-    image(check_b_type,width/2,height/2);
     }else if(currentState === "cprC1"){
       cprtpass = millis()-cprtime;
     if(cprtpass > 6000){
