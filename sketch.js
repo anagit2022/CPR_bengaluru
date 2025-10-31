@@ -494,6 +494,7 @@ function mousePressed(){
       mouseY < promisey + promiseh
     ){
       currentState = "promise_seal";
+      promise_start = millis();
       console.log(currentState);
     }
      
