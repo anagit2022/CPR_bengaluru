@@ -477,6 +477,50 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
       currentState = "cprB";
+      breathe_time = millis();
+       if(breath_no % 3 === 0){
+       gasp_aud.play();
+      }else if(breath_no % 5 === 0){
+      normal_breath_aud.play();
+      }
+      console.log(currentState);
+      }
+  }else if(currentState == "breath_Check"){
+    if (
+      mouseX > yesx &&
+      mouseX < yesx + yesw &&
+      mouseY > yesy &&
+      mouseY < yesy + yesh
+    ) {
+      currentState = "check_b_type";
+      console.log(currentState);
+      }else if (
+      mouseX > nox &&
+      mouseX < nox + now &&
+      mouseY > noy &&
+      mouseY < noy + noh
+    ) {
+      currentState = "cprC1";
+      cprtime = millis();
+      console.log(currentState);
+      }
+  }else if(currentState == "check_b_type"){
+    if (
+      mouseX > normalx &&
+      mouseX < normalx + normalw &&
+      mouseY > normaly &&
+      mouseY < normaly + normalh
+    ) {
+      currentState = "b_normal";
+      console.log(currentState);
+      }else if (
+      mouseX > abnormalx &&
+      mouseX < abnormalx + abnormalw &&
+      mouseY > abnormaly &&
+      mouseY < abnormaly + abnormalh
+    ) {
+      currentState = "cprC1";
+      cprtime = millis();
       console.log(currentState);
       }
   }else if(currentState == "cprS"){
@@ -528,52 +572,9 @@ function mousePressed(){
       mouseY < doney + doneh
     ) {
       currentState = "cprB";
-      breathe_time = millis();
       console.log(currentState);
-      if(breath_no % 3 === 0){
-       gasp_aud.play();
-      }else if(breath_no % 5 === 0){
-      normal_breath_aud.play();
-      }
+      
   }
-  }else if(currentState == "breath_Check"){
-    if (
-      mouseX > yesx &&
-      mouseX < yesx + yesw &&
-      mouseY > yesy &&
-      mouseY < yesy + yesh
-    ) {
-      currentState = "check_b_type";
-      console.log(currentState);
-      }else if (
-      mouseX > nox &&
-      mouseX < nox + now &&
-      mouseY > noy &&
-      mouseY < noy + noh
-    ) {
-      currentState = "cprC1";
-      cprtime = millis();
-      console.log(currentState);
-      }
-  }else if(currentState == "check_b_type"){
-    if (
-      mouseX > normalx &&
-      mouseX < normalx + normalw &&
-      mouseY > normaly &&
-      mouseY < normaly + normalh
-    ) {
-      currentState = "b_normal";
-      console.log(currentState);
-      }else if (
-      mouseX > abnormalx &&
-      mouseX < abnormalx + abnormalw &&
-      mouseY > abnormaly &&
-      mouseY < abnormaly + abnormalh
-    ) {
-      currentState = "cprC1";
-      cprtime = millis();
-      console.log(currentState);
-      }
   }else if(currentState == "cprC1"){
     if (
       mouseX > nextx &&
