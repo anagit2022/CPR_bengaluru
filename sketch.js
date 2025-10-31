@@ -494,7 +494,6 @@ function mousePressed(){
       mouseY < promisey + promiseh
     ){
       currentState = "promise_seal";
-      promise_start = millis();
       console.log(currentState);
     }
      
@@ -560,6 +559,7 @@ function mousePressed(){
       mouseY < sqnexty + sqnexth
     ) {
       currentState = "promiseNBT";
+       promise_start = millis();
       console.log(currentState);
       }
   }else if(currentState == "promiseNBP"){
