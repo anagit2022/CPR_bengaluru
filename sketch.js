@@ -139,6 +139,11 @@ function setup(){
   nexty= windowHeight*0.9;
   nextw= 50;
   nexth=50;
+  // sq next button
+  sqnextx= windowWidth*0.75;
+  sqnexty= windowHeight*0.85;
+  sqnextw= 56;
+  sqnexth=56;
   // no button
  nox = windowWidth*0.1;
  noy =windowHeight*0.86; 
@@ -449,10 +454,10 @@ function mousePressed(){
       }
   }else if(currentState == "dcantsafe"){
     if (
-      mouseX > nextx &&
-      mouseX < nextx + nextw &&
-      mouseY > nexty &&
-      mouseY < nexty + nexth
+      mouseX > sqnextx &&
+      mouseX < sqnextx + sqnextw &&
+      mouseY > sqnexty &&
+      mouseY < sqnexty + sqnexth
     ) {
       currentState = "promiseDT";
        promise_start = millis();
@@ -521,6 +526,16 @@ function mousePressed(){
     ) {
       currentState = "cprC1";
       cprtime = millis();
+      console.log(currentState);
+      }
+  }else if(currentState == "b_normal"){
+    if (
+      mouseX > sqnextx &&
+      mouseX < sqnextx + sqnextw &&
+      mouseY > sqnexty &&
+      mouseY < sqnexty + sqnexth
+    ) {
+      currentState = "promiseS";
       console.log(currentState);
       }
   }else if(currentState == "cprS"){
