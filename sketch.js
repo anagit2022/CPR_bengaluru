@@ -78,7 +78,7 @@ function preload(){
   // AED
   cprA = loadImage("cprA (1).png");
 // check for breathing
-  cprB = loadImage("cprB.png")
+  cprB = loadImage("b.png")
   normal_breath_aud = loadSound("breathing-6811.mp3");
   gasp_aud = loadSound("gasping.m4a");
   breath_check = loadImage("check_if_breathing.png");
