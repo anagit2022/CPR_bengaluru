@@ -83,7 +83,7 @@ function preload(){
   gasp_aud = loadSound("gasping.m4a");
   breath_check = loadImage("check_if_breathing.png");
   check_b_type = loadImage("check type of breathing observed.png");
-  normal_breath = loadImage("yes breathing.png");
+  normal_breath = loadImage("normalbreathing.png");
   // cpr compressions instructions
   cprC1 = loadImage("cprC1.gif");
   cprC2 = loadImage("cprC2.png");
