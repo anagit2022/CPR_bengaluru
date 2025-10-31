@@ -113,10 +113,10 @@ function preload(){
   promiseDP = loadImage("PromisesealDF.png");
   promiseDPM = loadImage("PromisesealDM.png");
   // FOR NORMAL BREATHING PROMISE
-  promiseNBT = loadImage("");
-  promiseNBTM = loadImage("");
-  promiseNBP = loadImage("");
-  promiseNBPM = loadImage("");
+  promiseNBT = loadImage("giffycanvas - 2025-10-31T141258.642.gif");
+  promiseNBTM = loadImage("giffycanvas - 2025-10-31T141216.810.gif");
+  promiseNBP = loadImage("PromisesealNB.png");
+  promiseNBPM = loadImage("PromisesealNBM.png");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
@@ -338,6 +338,13 @@ function draw(){
     }else if(currentState === "b_normal"){
     background("#F35F3C");
     image(normal_breath,width/2,height/2);
+    }else if(currentState === "promiseNBT"){
+    background("#F35F3C");
+   if(genderState === 1){
+      image(promiseNBTM,width/2,height/2);
+    }else if(genderState === 2){
+    image(promiseNBT,width/2,height/2);
+    }
     }else if(currentState === "cprD_yes"){
     background("#F35F3C");
     image(cprD_yes,width/2,height/2);
@@ -541,7 +548,7 @@ function mousePressed(){
       mouseY > sqnexty &&
       mouseY < sqnexty + sqnexth
     ) {
-      currentState = "promiseS";
+      currentState = "promiseNBT";
       console.log(currentState);
       }
   }else if(currentState == "cprS"){
