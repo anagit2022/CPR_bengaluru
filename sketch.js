@@ -454,6 +454,7 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
       currentState = "cprD_yes";
+      gasp_aud.play();
       console.log(currentState);
       }
   }else if(currentState == "cprD_yes"){
