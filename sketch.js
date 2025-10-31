@@ -470,21 +470,13 @@ function mousePressed(){
     }
      
   }else if(currentState == "cpr_check_response"){
-    if (
-      mouseX > yesx &&
-      mouseX < yesx + yesw &&
-      mouseY > yesy &&
-      mouseY < yesy + yesh
-    ) {
-      currentState = "concious";
-      console.log(currentState);
-      }else if (
+     if (
       mouseX > nox &&
       mouseX < nox + now &&
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-      currentState = "cprS";
+      currentState = "cprB";
       console.log(currentState);
       }
   }else if(currentState == "cprS"){
