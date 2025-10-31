@@ -9,7 +9,7 @@ let genderState = 0;
   let call_time = 0; 
   let check_response;
 //call 112 or shout
-  let call,cprS1,cprS0,cprS8,cprCalling;
+  let call,call1,cprS0,cprS8,cprCalling;
 // AED
 let cprA;
 // check breathing
@@ -72,7 +72,7 @@ function preload(){
   check_response = loadImage("cprR1.png");
 //call 108 or shout
   call = loadImage("call.png");
-  cprS1 = loadImage("call1 (1).png");
+  call1 = loadImage("call 1.png");
   cprS0 = loadImage("call10 (1).png");
   cprS8 = loadImage("call 108 (1).png");
   cprCalling = loadImage("calling 108.png");
@@ -253,9 +253,9 @@ function draw(){
     }else if(currentState === "call"){
     background("#F35F3C");
     image(call,width/2,height/2);
-    }else if(currentState === "cprS1"){
+    }else if(currentState === "call1"){
     background("#F35F3C");
-    image(cprS1,width/2,height/2);
+    image(call1,width/2,height/2);
     }else if(currentState === "cprS0"){
     background("#F35F3C");
     image(cprS0,width/2,height/2);
@@ -547,8 +547,7 @@ function mousePressed(){
       mouseY > abnormaly &&
       mouseY < abnormaly + abnormalh
     ) {
-      currentState = "cprC1";
-      cprtime = millis();
+      currentState = "call";
       console.log(currentState);
       }
   }else if(currentState == "b_normal"){
@@ -573,6 +572,16 @@ function mousePressed(){
       console.log(currentState);
     }
      
+  }else if(currentState == "call"){
+    if (
+      mouseX > nextx &&
+      mouseX < nextx + nextw &&
+      mouseY > nexty &&
+      mouseY < nexty + nexth
+    ) {
+      currentState = "call1";
+      console.log(currentState);
+      }
   }else if(currentState == "cprS"){
     if (
       mouseX > call1x &&
