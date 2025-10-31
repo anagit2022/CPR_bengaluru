@@ -347,7 +347,8 @@ function draw(){
     }
     if(millis() - promise_start >3000){
       currentState = "promiseNBP";
-    }else if(currentState === "promiseNBP"){
+    }
+  }else if(currentState === "promiseNBP"){
     background("#F35F3C");
     if(genderState === 1){
       image(promiseNBPM,width/2,height/2);
