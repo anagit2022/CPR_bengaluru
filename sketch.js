@@ -239,6 +239,9 @@ function draw(){
       }
     }else if(currentState === "cprB"){
     background("#FFC5B7");
+    if(breath_no % 3 === 0){
+            text("TEST: GASPING SOUND SHOULD BE PLAYING", 50, 210);
+        }
     image(cprB,width/2,height/2);
       if(millis() - breathe_time >10000 ){
         currentState = "breath_Check";
