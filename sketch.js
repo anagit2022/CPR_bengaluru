@@ -52,6 +52,7 @@ let diffGoal = 0;
 let win,aed,amb,late;
 // promise screen
 let promiseT,promiseTM,promiseP,promisePM,promiseS,promiseSM,promiseDT,promiseDTM;
+let promiseNBT,promiseNBTM,promiseNBP,promiseNBPM;
 let promise_time = 0;
 let promise_start=0;
 // track inactivity
@@ -111,6 +112,11 @@ function preload(){
   promiseDTM = loadImage("giffycanvas - 2025-10-30T182842.692.gif");
   promiseDP = loadImage("PromisesealDF.png");
   promiseDPM = loadImage("PromisesealDM.png");
+  // FOR NORMAL BREATHING PROMISE
+  promiseNBT = loadImage("");
+  promiseNBTM = loadImage("");
+  promiseNBP = loadImage("");
+  promiseNBPM = loadImage("");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
