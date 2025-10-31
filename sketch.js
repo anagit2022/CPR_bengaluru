@@ -8,8 +8,8 @@ let genderState = 0;
   let response_time = 0;
   let call_time = 0; 
   let check_response;
-//call 108 or shout
-  let cprS,cprS1,cprS0,cprS8,cprCalling;
+//call 112 or shout
+  let call,cprS1,cprS0,cprS8,cprCalling;
 // AED
 let cprA;
 // check breathing
@@ -71,7 +71,7 @@ function preload(){
   dcantsafe = loadImage("Dcan't safe (3).png");
   check_response = loadImage("cprR1.png");
 //call 108 or shout
-  cprS = loadImage("call blank (1).png");
+  call = loadImage("call.png");
   cprS1 = loadImage("call1 (1).png");
   cprS0 = loadImage("call10 (1).png");
   cprS8 = loadImage("call 108 (1).png");
@@ -250,9 +250,9 @@ function draw(){
     }else if(currentState === "check_b_type"){
     background("#F35F3C");
     image(check_b_type,width/2,height/2);
-    }else if(currentState === "cprS"){
+    }else if(currentState === "call"){
     background("#F35F3C");
-    image(cprS,width/2,height/2);
+    image(call,width/2,height/2);
     }else if(currentState === "cprS1"){
     background("#F35F3C");
     image(cprS1,width/2,height/2);
@@ -528,8 +528,7 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-      currentState = "cprC1";
-      cprtime = millis();
+      currentState = "call";
       console.log(currentState);
       }
   }else if(currentState == "check_b_type"){
