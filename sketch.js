@@ -508,8 +508,10 @@ function mousePressed(){
       breathe_time = millis();
       console.log(currentState);
        if(breath_no % 3 === 0){
+        console.log("ok");
        gasp_aud.play();
       }else if(breath_no % 5 === 0){
+        console.log("ok");
       normal_breath_aud.play();
       }
       }
