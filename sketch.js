@@ -80,7 +80,7 @@ function preload(){
   cprA = loadImage("cprA (1).png");
 // check for breathing
   cprB = loadImage("b.png")
-  normal_breath_aud = loadSound("normal_breath_sounds.mp3");
+  normal_breath_aud = loadSound("breathing-6811.mp3");
   gasp_aud = loadSound("gasping.m4a");
   breath_check = loadImage("check_if_breathing.png");
   check_b_type = loadImage("check type of breathing observed.png");
@@ -508,11 +508,9 @@ function mousePressed(){
       breathe_time = millis();
       console.log(currentState);
        if(breath_no % 3 === 0){
-        console.log("ok");
-       gasp_aud.play();
+     gasp_aud.play();
       }else if(breath_no % 5 === 0){
-        console.log("ok");
-      normal_breath_aud.play();
+       normal_breath_aud.play();
       }
       }
   }else if(currentState == "breath_Check"){
