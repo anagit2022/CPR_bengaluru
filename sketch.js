@@ -513,7 +513,7 @@ function mousePressed(){
       console.log(currentState);
      }
 
-      } else if(currentState == "breath_Check"){
+      } else if (currentState == "breath_Check"){
     if (
       mouseX > yesx &&
       mouseX < yesx + yesw &&
@@ -522,7 +522,7 @@ function mousePressed(){
     ) {
       currentState = "check_b_type";
       console.log(currentState);
-      }else if (
+      } else if (
       mouseX > nox &&
       mouseX < nox + now &&
       mouseY > noy &&
