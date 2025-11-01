@@ -1,4 +1,5 @@
 let begin_screen,gender_screen,intro_screen;
+let testcount = 0;
 let cprD;
 let cprR;
 let cprD_yes,dcantsafe;
@@ -504,9 +505,9 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-      gasp_aud.play();
-      currentState = "cprB";
-      breathe_time = millis();
+      testcount = 10;
+      //currentState = "cprB";
+      //breathe_time = millis();
       console.log(currentState);
 
       }
