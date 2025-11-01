@@ -1,5 +1,3 @@
-
-
 let begin_screen,gender_screen,intro_screen;
 let cprD;
 let cprR;
@@ -955,6 +953,5 @@ function touchStarted() {
   mousePressed(); // Use the same logic
   return false; // Prevent default browser touch behavior
 }
-
 
 
