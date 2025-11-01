@@ -512,7 +512,7 @@ function mousePressed(){
         normal_breath_aud.play();
        }
        currentState = "cprB";
-      //breathe_time = millis();
+      breathe_time = millis();
       console.log(currentState);
      }
 
