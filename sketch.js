@@ -507,13 +507,13 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
       normal_breath_aud.play();
-       }
+       
       //currentState = "cprB";
       //breathe_time = millis();
       console.log(currentState);
+     }
 
-      }
-  }else if(currentState == "breath_Check"){
+      } else if(currentState == "breath_Check"){
     if (
       mouseX > yesx &&
       mouseX < yesx + yesw &&
