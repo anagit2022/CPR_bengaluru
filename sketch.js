@@ -510,11 +510,10 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
       currentState = "cprB";
-    //  breath_time = millis();
-       if(breath_no % 3 == 0){
+        breath_time = millis();
          testcount= 10;
        gasp_aud.play();
-       }
+       
       console.log(currentState);
      }
 
