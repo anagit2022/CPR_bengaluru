@@ -353,14 +353,34 @@ function draw(){
 }
 function mousePressed(){
   pressed_time = millis();
-  if (currentState === "begin") {
+   if (currentState === "begin") {
     if (
       mouseX > beginx &&
       mouseX < beginx + beginw &&
       mouseY > beginy &&
       mouseY < beginy + beginh
     ) {
+      currentState = "gender_screen";
+      console.log(currentState);
+      }
+  }else if(currentState == "gender_screen"){
+    if (
+      mouseX > rajax &&
+      mouseX < rajax + rajaw &&
+      mouseY > rajay &&
+      mouseY < rajay + rajah
+    ) {
       currentState = "intro";
+      genderState = 1;
+      console.log(currentState);
+      }else if (
+      mouseX > ranix &&
+      mouseX < ranix + raniw &&
+      mouseY > raniy &&
+      mouseY < raniy + ranih
+    ) {
+      currentState = "intro";
+      genderState = 2;
       console.log(currentState);
       }
   }else if(currentState == "intro"){
@@ -400,6 +420,7 @@ function mousePressed(){
       mouseY < yesy + yesh
     ) {
       currentState = "cprR";
+      response_time = millis();
       console.log(currentState);
       }else if (
       mouseX > nox &&
@@ -407,9 +428,31 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-      currentState = "cprD_yes";
+      currentState = "dcantsafe";
       console.log(currentState);
       }
+  }else if(currentState == "dcantsafe"){
+    if (
+      mouseX > sqnextx &&
+      mouseX < sqnextx + sqnextw &&
+      mouseY > sqnexty &&
+      mouseY < sqnexty + sqnexth
+    ) {
+      currentState = "promiseDT";
+       promise_start = millis();
+      console.log(currentState);
+      }
+  }else if(currentState == "promiseDP"){
+   if (
+      mouseX > promisex &&
+      mouseX < promisex + promisew &&
+      mouseY > promisey &&
+      mouseY < promisey + promiseh
+    ){
+      currentState = "promise_seal";
+      console.log(currentState);
+    }
+     
   }else if(currentState == "cpr_check_response"){
     if (
       mouseX > yesx &&
