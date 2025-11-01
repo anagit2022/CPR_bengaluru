@@ -14,7 +14,7 @@ let genderState = 0;
 let cprA;
 // check breathing
 let cprB;
-let breath_no = 0;
+let breath_no ;
 let normal_breath_aud,gasp_aud;
 let breathe_time = 0;
 let breath_check;
