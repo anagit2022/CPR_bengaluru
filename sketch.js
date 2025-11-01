@@ -506,11 +506,7 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-       if(breath_no % 3 == 0){
-         testcount = 10;
-       }else if(breath_no % 5 == 0){
-         testcount = 20;
-         normal_breath_aud.play()
+      normal_breath_aud.play();
        }
       //currentState = "cprB";
       //breathe_time = millis();
