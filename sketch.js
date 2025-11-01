@@ -18,6 +18,7 @@ let cprB;
 let breath_no ;
 let normal_breath_aud,gasp_aud;
 let breath_time = 0;
+let breathtimepass = 0;
 let breath_check;
 let check_b_type;
 let normal_breath;
@@ -244,7 +245,9 @@ function draw(){
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
-      if(millis() - breath_time >= 10000 ){
+    breathtimepass = millis() - breath_time;
+    console.log(breathtimepass);
+      if(breathtimepass >= 10000 ){
         currentState = "breath_Check";
         console.log(currentState); 
       }
