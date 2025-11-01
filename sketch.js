@@ -237,14 +237,12 @@ function draw(){
       if(millis()-response_time >= 6000){
       currentState = "cpr_check_response";
       }
+    }else if(currentState === "cpr_check_response"){
+    background("#F35F3C");
+    image(check_response ,width/2,height/2);
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
-    if(breath_no % 3 === 0){
-     gasp_aud.play();
-      }else if(breath_no % 5 === 0){
-       normal_breath_aud.play();
-      }
       if(millis() - breathe_time >10000 ){
         currentState = "breath_Check";
         console.log(currentState); 
@@ -384,9 +382,6 @@ function draw(){
     }else if(genderState === 2){
     image(promiseDP,width/2,height/2);
     }
-    }else if(currentState === "cpr_check_response"){
-    background("#F35F3C");
-    image(check_response ,width/2,height/2);
     }
 
   // debug helpers
@@ -511,6 +506,11 @@ function mousePressed(){
     ) {
       currentState = "cprB";
       breathe_time = millis();
+       if(breath_no % 3 === 0){
+         gasp_aud.play();
+       }else if(breath_no % 5 === 0){
+         normal_breath_aud.play();
+       }
       console.log(currentState);
 
       }
