@@ -511,7 +511,7 @@ function mousePressed(){
        }else if(breath_no % 5 == 0){
         normal_breath_aud.play();
        }
-      //currentState = "cprB";
+       currentState = "cprB";
       //breathe_time = millis();
       console.log(currentState);
      }
