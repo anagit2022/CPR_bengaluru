@@ -393,7 +393,7 @@ function draw(){
   text(" height/2 : " + height ,200,40);
   text("bno: "+breath_no ,350,40);
    text("s: "+currentState ,200,180);
-  text("t: "+testcount ,250,180);
+  text("t: "+testcount ,250,140);
   //______________________________________
   
 }
