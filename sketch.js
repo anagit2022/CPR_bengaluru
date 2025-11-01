@@ -504,13 +504,9 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
+      gasp_aud.play();
       currentState = "cprB";
       breathe_time = millis();
-       if(breath_no % 3 === 0){
-         gasp_aud.play();
-       }else if(breath_no % 5 === 0){
-         normal_breath_aud.play();
-       }
       console.log(currentState);
 
       }
