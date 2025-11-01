@@ -69,7 +69,7 @@ function preload(){
   cprR = loadImage("r.png");
   cprD_yes = loadImage("Dnot safe.png");
   dcantsafe = loadImage("Dcan't safe (3).png");
-  check_response = loadImage("cprR1.png");
+  check_response = loadImage("response check.png");
 //call 108 or shout
   call = loadImage("call.png");
   call1 = loadImage("call 1.png");
@@ -82,8 +82,8 @@ function preload(){
   cprB = loadImage("b.png")
   normal_breath_aud = loadSound("breathing-6811.mp3");
   gasp_aud = loadSound("gasping.m4a");
-  breath_check = loadImage("check_if_breathing.png");
-  check_b_type = loadImage("check type of breathing observed.png");
+  breath_check = loadImage("breathing check.png");
+  check_b_type = loadImage("btypecheck.png");
   normal_breath = loadImage("normalbreathing.png");
   // cpr compressions instructions
   cprC1 = loadImage("cprC1.gif");
