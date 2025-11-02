@@ -287,13 +287,16 @@ function draw(){
     }else if(currentState === "cprCalling"){
     background("#F35F3C");
     image(cprCalling,width/2,height/2);
-      if(millis()- call_time > 500){
-       currentState ="speakeradded";
+      
        console.log(currentState);
-      }
+      
     }else if(currentState === "speakeradded"){
     background("#F35F3C");
     image(speakeradded,width/2,height/2);
+    if(millis()- call_time > 500){
+       currentState ="cprC1";
+       console.log(currentState);
+      }
     }else if(currentState === "cprC1"){
       cprtpass = millis()-cprtime;
     if(cprtpass > 6000){
