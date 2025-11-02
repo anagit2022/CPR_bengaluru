@@ -245,12 +245,6 @@ function draw(){
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
-    //breathtimepass = millis() - breath_time;
-    //console.log(breathtimepass);
-     // if(breathtimepass >= 10000 ){
-        //currentState = "breath_Check";
-        console.log(currentState); 
-     //}
     }else if(currentState === "breath_Check"){
     background("#F35F3C");
     image(breath_check,width/2,height/2);
