@@ -1,6 +1,6 @@
+
 let begin_screen,gender_screen,intro_screen;
 let testcount = 0;
-let gaspPlayed = false; // global
 let cprD;
 let cprR;
 let cprD_yes,dcantsafe;
@@ -245,10 +245,10 @@ function draw(){
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
-    if(breath_no % 3 === 0 && !gaspPlayed){
-       gasp_aud.play();
-      gaspPlayed = true;
-    }
+      if(millis() - breathe_time > 10000 ){
+        currentState = "breath_Check";
+        console.log(currentState); 
+      }
     }else if(currentState === "breath_Check"){
     background("#F35F3C");
     image(breath_check,width/2,height/2);
@@ -500,15 +500,18 @@ function mousePressed(){
       console.log(currentState);
     }
      
-  }else if(currentState === "cpr_check_response"){
+  }else if(currentState == "cpr_check_response"){
      if (
       mouseX > nox &&
       mouseX < nox + now &&
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-    
+      //normal_breath_aud.play();
+       gasp_aud.play();
+       
       currentState = "cprB";
+      breathe_time = millis();
       console.log(currentState);
      }
 
@@ -676,7 +679,7 @@ function mousePressed(){
   }else if(currentState == "play"){
     compression_count += 1;
     console.log(compression_count);
-    //press_music.play();
+    press_music.play();
     now = millis();
     if (lastTouchTime !== 0) {
       interval = now - lastTouchTime;
