@@ -245,10 +245,6 @@ function draw(){
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
-      if(millis() - breathe_time >10000 ){
-        currentState = "breath_Check";
-        console.log(currentState); 
-      }
     }else if(currentState === "breath_Check"){
     background("#F35F3C");
     image(breath_check,width/2,height/2);
@@ -509,8 +505,7 @@ function mousePressed(){
     ) {
       //normal_breath_aud.play();
        gasp_aud.play();
-       
-      //currentState = "cprB";
+       currentState === "cprB
       //breathe_time = millis();
       console.log(currentState);
      }
