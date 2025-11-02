@@ -271,7 +271,7 @@ function draw(){
     }else if(currentState === "call11"){
     background("#F35F3C");
     image(call11,width/2,height/2);
-    }lse if(currentState === "call112"){
+    }else if(currentState === "call112"){
     background("#F35F3C");
     image(call112,width/2,height/2);
     }else if(currentState === "cprCalling"){
