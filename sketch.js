@@ -12,7 +12,7 @@ let genderState = 0;
   let call_time = 0; 
   let check_response;
 //call 112 or shout
-  let call,call1,cprS0,cprS8,cprCalling;
+  let call,callblank,call1,call11,call112,cprCalling,speakeradded;
 // AED
 let cprA;
 // check breathing
@@ -76,10 +76,12 @@ function preload(){
   check_response = loadImage("response check.png");
 //call 108 or shout
   call = loadImage("call.png");
+  callblank = loadImage("call blank112.png");
   call1 = loadImage("call 1.png");
-  cprS0 = loadImage("call10 (1).png");
-  cprS8 = loadImage("call 108 (1).png");
-  cprCalling = loadImage("calling 108.png");
+  call11 = loadImage("call 11.png");
+  call112 = loadImage("call 112.png");
+  cprCalling = loadImage("addspeaker.png");
+  speakeradded = loadImage("speaker added.png");
   // AED
   cprA = loadImage("cprA (1).png");
 // check for breathing
@@ -260,25 +262,28 @@ function draw(){
     }else if(currentState === "call"){
     background("#F35F3C");
     image(call,width/2,height/2);
+    }else if(currentState === "callblank"){
+    background("#F35F3C");
+    image(callblank,width/2,height/2);
     }else if(currentState === "call1"){
     background("#F35F3C");
     image(call1,width/2,height/2);
-    }else if(currentState === "cprS0"){
+    }else if(currentState === "call11"){
     background("#F35F3C");
-    image(cprS0,width/2,height/2);
-    }else if(currentState === "cprS8"){
+    image(call11,width/2,height/2);
+    }lse if(currentState === "call112"){
     background("#F35F3C");
-    image(cprS8,width/2,height/2);
+    image(call112,width/2,height/2);
     }else if(currentState === "cprCalling"){
     background("#F35F3C");
     image(cprCalling,width/2,height/2);
       if(millis()- call_time > 500){
-       currentState ="cprA";
+       currentState ="speakeradded";
        console.log(currentState);
       }
-    }else if(currentState === "cprA"){
+    }else if(currentState === "speakeradded"){
     background("#F35F3C");
-    image(cprA,width/2,height/2);
+    image(speakeradded,width/2,height/2);
     }else if(currentState === "cprC1"){
       cprtpass = millis()-cprtime;
     if(cprtpass > 6000){
@@ -592,37 +597,37 @@ function mousePressed(){
       currentState = "call1";
       console.log(currentState);
       }
-  }else if(currentState == "cprS"){
+  }else if(currentState == "call1"){
     if (
       mouseX > call1x &&
       mouseX < call1x + call1w &&
       mouseY > call1y &&
       mouseY < call1y + call1h
     ) {
-      currentState = "cprS1";
+      currentState = "call11";
       console.log(currentState);
       }
-  }else if(currentState == "cprS1"){
+  }else if(currentState == "call11"){
     if (
-      mouseX > call0x &&
-      mouseX < call0x + call0w &&
-      mouseY > call0y &&
-      mouseY < call0y + call0h
+      mouseX > call1x &&
+      mouseX < call1x + call1w &&
+      mouseY > call1y &&
+      mouseY < call1y + call1h
     ) {
-      currentState = "cprS0";
+      currentState = "call112";
       console.log(currentState);
       }
-  }else if(currentState == "cprS0"){
+  }else if(currentState == "call112"){
     if (
-      mouseX > call8x &&
-      mouseX < call8x + call8w &&
-      mouseY > call8y &&
-      mouseY < call8y + call8h
+      mouseX > call2x &&
+      mouseX < call2x + call2w &&
+      mouseY > call2y &&
+      mouseY < call2y + call2h
     ) {
-      currentState = "cprS8";
+      currentState = "cprCalling";
       console.log(currentState);
       }
-  }else if(currentState == "cprS8"){
+  }else if(currentState == "cprCalling"){
     if (
       mouseX > callx &&
       mouseX < callx + callw &&
