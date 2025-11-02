@@ -246,7 +246,11 @@ function draw(){
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
-    }else if(currentState === "breath_Check"){
+    breathtimepass = millis() - breath_time;
+    if( breathtimepass >10000){
+      currentState = "breath_Check";
+    }
+  }else if(currentState === "breath_Check"){
     background("#F35F3C");
     image(breath_check,width/2,height/2);
     }else if(currentState === "check_b_type"){
@@ -504,14 +508,16 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-       if(breath_no % 3 == 0)
+       currentState = "cprB";
+        breath_time = millis();
+       if(breath_no % 3 === 0)
        {
+         gasp_aud.play();
          testcount= 10;
-       gasp_aud.play();
+       }else if (breath_no % 5 === 0){
+         normal_breath_aud.play();
          testcount= 20;
        }
-     // currentState = "cprB";
-        //breath_time = millis();
        
       console.log(currentState);
      }
