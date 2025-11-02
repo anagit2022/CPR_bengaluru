@@ -191,6 +191,11 @@ function setup(){
   cally = windowHeight*0.8; 
   callw =60 ;
   callh =60 ;
+  // speaker add
+  speakerx =windowWidth*0.64;  
+  speakery = windowHeight*0.82; 
+  speakerw =60 ;
+  speakerh =60 ;
   // doneAed
   donex =windowWidth*0.3;  
   doney = windowHeight*0.85; 
