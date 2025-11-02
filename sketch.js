@@ -247,6 +247,7 @@ function draw(){
     image(cprB,width/2,height/2);
     if(breath_no % 3 === 0){
        gasp_aud.play();
+    }
     }else if(currentState === "breath_Check"){
     background("#F35F3C");
     image(breath_check,width/2,height/2);
