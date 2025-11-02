@@ -59,30 +59,28 @@ lastTouchElapsed = 0;
 
   
 function preload(){
-  begin_screen = loadImage("begin (1).png");
-  gender_screen = loadImage("f.png");
+  begin_screen = loadImage("begin_screen.png");
   intro_screen = loadImage("intro_screen.png");
   // check for danger if safe or not before cprR(esponse)
-  cprD = loadImage("d.png");
-  cprR = loadImage("r.png");
-  cprD_yes = loadImage("Dnot safe.png");
-  dcantsafe = loadImage("Dcan't safe (3).png");
-  check_response = loadImage("response check.png");
+  cprD = loadImage("cprD.png");
+  cprR = loadImage("cprR.png");
+  cprD_yes = loadImage("not in safe place.png");
+  check_response = loadImage("cprR1.png");
 //call 108 or shout
-  call = loadImage("call.png");
-  call1 = loadImage("call 1.png");
+  cprS = loadImage("call blank (1).png");
+  cprS1 = loadImage("call1 (1).png");
   cprS0 = loadImage("call10 (1).png");
   cprS8 = loadImage("call 108 (1).png");
   cprCalling = loadImage("calling 108.png");
   // AED
   cprA = loadImage("cprA (1).png");
 // check for breathing
-  cprB = loadImage("b.png")
+  cprB = loadImage("cprB.png")
   normal_breath_aud = loadSound("breathing-6811.mp3");
   gasp_aud = loadSound("gasping.m4a");
-  breath_check = loadImage("breathing check.png");
-  check_b_type = loadImage("btypecheck.png");
-  normal_breath = loadImage("normalbreathing.png");
+  breath_check = loadImage("check_if_breathing.png");
+  check_b_type = loadImage("check type of breathing observed.png");
+  normal_breath = loadImage("yes breathing.png");
   // cpr compressions instructions
   cprC1 = loadImage("cprC1.gif");
   cprC2 = loadImage("cprC2.png");
@@ -100,21 +98,9 @@ function preload(){
   amb = loadImage("amb.gif");
   late = loadImage("delayed.png");
   // promise screen
-  promiseT = loadImage("giffycanvas - 2025-10-29T083935.786.gif");
-  promiseTM = loadImage("giffycanvas - 2025-10-29T161641.860.gif");
-  promiseP = loadImage("PromisesealF.png");
-  promisePM = loadImage("PromisesealM.png");
-  promiseS = loadImage("PromisesealedF.png");
-  promiseSM = loadImage("PromisesealedM.png");
-  promiseDT = loadImage("giffycanvas - 2025-10-30T194121.823.gif");
-  promiseDTM = loadImage("giffycanvas - 2025-10-30T182842.692.gif");
-  promiseDP = loadImage("PromisesealDF.png");
-  promiseDPM = loadImage("PromisesealDM.png");
-  // FOR NORMAL BREATHING PROMISE
-  promiseNBT = loadImage("giffycanvas - 2025-10-31T141258.642.gif");
-  promiseNBTM = loadImage("giffycanvas - 2025-10-31T141216.810.gif");
-  promiseNBP = loadImage("PromisesealNB.png");
-  promiseNBPM = loadImage("PromisesealNBM.png");
+  promiseT = loadImage("giffycanvas - 2025-10-28T143742.762.gif")
+  promiseP = loadImage("lastscreenF (2).png");
+  promiseS = loadImage("lastscreenF (1).png");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
