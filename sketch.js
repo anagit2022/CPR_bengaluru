@@ -181,6 +181,11 @@ function setup(){
   call8y = windowHeight*0.6; 
   call8w =60 ;
   call8h =60 ;
+  / call 2
+  call2x =windowWidth*0.45;  
+  call2y = windowHeight*0.43; 
+  call2w =60 ;
+  call2h =60 ;
   // call ring
   callx =windowWidth*0.4;  
   cally = windowHeight*0.8; 
