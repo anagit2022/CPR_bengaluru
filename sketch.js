@@ -1,6 +1,6 @@
-
 let begin_screen,gender_screen,intro_screen;
 let testcount = 0;
+let gaspPlayed = false; // global
 let cprD;
 let cprR;
 let cprD_yes,dcantsafe;
@@ -245,8 +245,9 @@ function draw(){
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
-    if(breath_no % 3 === 0){
+    if(breath_no % 3 === 0 && !gaspPlayed){
        gasp_aud.play();
+      gaspPlayed = true;
     }
     }else if(currentState === "breath_Check"){
     background("#F35F3C");
