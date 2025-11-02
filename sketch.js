@@ -505,7 +505,7 @@ function mousePressed(){
     ) {
       //normal_breath_aud.play();
        gasp_aud.play();
-       currentState === "cprB
+       currentState = "cprB";
       //breathe_time = millis();
       console.log(currentState);
      }
