@@ -250,7 +250,7 @@ function draw(){
      // if(breathtimepass >= 10000 ){
         //currentState = "breath_Check";
         console.log(currentState); 
-      }
+     //}
     }else if(currentState === "breath_Check"){
     background("#F35F3C");
     image(breath_check,width/2,height/2);
