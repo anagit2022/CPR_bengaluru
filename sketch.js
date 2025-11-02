@@ -594,6 +594,16 @@ function mousePressed(){
       mouseY > nexty &&
       mouseY < nexty + nexth
     ) {
+      currentState = "callblank";
+      console.log(currentState);
+      }
+  }else if(currentState == "callblank"){
+    if (
+      mouseX > call1x &&
+      mouseX < call1x + call1w &&
+      mouseY > call1y &&
+      mouseY < call1y + call1h
+    ) {
       currentState = "call1";
       console.log(currentState);
       }
@@ -609,25 +619,15 @@ function mousePressed(){
       }
   }else if(currentState == "call11"){
     if (
-      mouseX > call1x &&
-      mouseX < call1x + call1w &&
-      mouseY > call1y &&
-      mouseY < call1y + call1h
-    ) {
-      currentState = "call112";
-      console.log(currentState);
-      }
-  }else if(currentState == "call112"){
-    if (
       mouseX > call2x &&
       mouseX < call2x + call2w &&
       mouseY > call2y &&
       mouseY < call2y + call2h
     ) {
-      currentState = "cprCalling";
+      currentState = "call112";
       console.log(currentState);
       }
-  }else if(currentState == "cprCalling"){
+  }else if(currentState == "call112"){
     if (
       mouseX > callx &&
       mouseX < callx + callw &&
