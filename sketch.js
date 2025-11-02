@@ -401,6 +401,7 @@ function draw(){
   
 }
 function mousePressed(){
+  userStartAudio();
   pressed_time = millis();
   if (currentState === "begin") {
     if (
