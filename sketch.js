@@ -496,7 +496,7 @@ function mousePressed(){
       console.log(currentState);
     }
      
-  }else if(currentState == "cpr_check_response"){
+  }else if(currentState === "cpr_check_response"){
      if (
       mouseX > nox &&
       mouseX < nox + now &&
