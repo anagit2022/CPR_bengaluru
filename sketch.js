@@ -1,24 +1,21 @@
-let begin_screen,gender_screen,intro_screen;
-let testcount = 0;
+let begin_screen,intro_screen;
 let cprD;
 let cprR;
-let cprD_yes,dcantsafe;
+let cprD_yes;
 let currentState = "begin";
-let genderState = 0;
 // check for cprR response
   let response_time = 0;
   let call_time = 0; 
   let check_response;
-//call 112 or shout
-  let call,call1,cprS0,cprS8,cprCalling;
+//call 108 or shout
+  let cprS,cprS1,cprS0,cprS8,cprCalling;
 // AED
 let cprA;
 // check breathing
 let cprB;
-let breath_no ;
+let breath_no = 0;
 let normal_breath_aud,gasp_aud;
-let breath_time = 0;
-let breathtimepass = 0;
+let breathe_time = 0;
 let breath_check;
 let check_b_type;
 let normal_breath;
@@ -53,8 +50,7 @@ let diffGoal = 0;
 // win screens
 let win,aed,amb,late;
 // promise screen
-let promiseT,promiseTM,promiseP,promisePM,promiseS,promiseSM,promiseDT,promiseDTM;
-let promiseNBT,promiseNBTM,promiseNBP,promiseNBPM;
+let promiseT,promiseP,promiseS;
 let promise_time = 0;
 let promise_start=0;
 // track inactivity
@@ -128,30 +124,15 @@ function setup(){
   console.log(breath_no)
   imageMode(CENTER);
   // begin button
-  beginx = windowWidth*0.2;
+  beginx = windowWidth*0.3;
   beginy = windowHeight*0.8;
   beginw = 142;
   beginh = 47;
-  // raja button
-  rajax = windowWidth*0.2;
-  rajay = windowHeight*0.86;
-  rajaw = 142;
-  rajah = 47;
-  // rani button
-  ranix = windowWidth*0.5;
-  raniy = windowHeight*0.86;
-  raniw = 142;
-  ranih = 47;
   // next button
   nextx= windowWidth*0.8;
   nexty= windowHeight*0.9;
   nextw= 50;
   nexth=50;
-  // sq next button
-  sqnextx= windowWidth*0.75;
-  sqnexty= windowHeight*0.85;
-  sqnextw= 56;
-  sqnexth=56;
   // no button
  nox = windowWidth*0.1;
  noy =windowHeight*0.86; 
@@ -222,9 +203,6 @@ function draw(){
   if(currentState=== "begin"){
     background("#F35F3C");
     image(begin_screen,width/2,height/2);
-  }else if(currentState === "gender_screen"){
-     background("#F35F3C");
-    image(gender_screen,width/2,height/2);
   }else if(currentState === "intro"){
      background("#F35F3C");
     image(intro_screen,width/2,height/2);
@@ -239,24 +217,12 @@ function draw(){
       if(millis()-response_time >= 6000){
       currentState = "cpr_check_response";
       }
-    }else if(currentState === "cpr_check_response"){
+    }else if(currentState === "cprS"){
     background("#F35F3C");
-    image(check_response ,width/2,height/2);
-    }else if(currentState === "cprB"){
-    background("#FFC5B7");
-    image(cprB,width/2,height/2);
-    }else if(currentState === "breath_Check"){
+    image(cprS,width/2,height/2);
+    }else if(currentState === "cprS1"){
     background("#F35F3C");
-    image(breath_check,width/2,height/2);
-    }else if(currentState === "check_b_type"){
-    background("#F35F3C");
-    image(check_b_type,width/2,height/2);
-    }else if(currentState === "call"){
-    background("#F35F3C");
-    image(call,width/2,height/2);
-    }else if(currentState === "call1"){
-    background("#F35F3C");
-    image(call1,width/2,height/2);
+    image(cprS1,width/2,height/2);
     }else if(currentState === "cprS0"){
     background("#F35F3C");
     image(cprS0,width/2,height/2);
@@ -273,6 +239,19 @@ function draw(){
     }else if(currentState === "cprA"){
     background("#F35F3C");
     image(cprA,width/2,height/2);
+    }else if(currentState === "cprB"){
+    background("#FFC5B7");
+    image(cprB,width/2,height/2);
+      if(millis() - breathe_time >10000 ){
+        currentState = "breath_Check";
+        console.log(currentState); 
+      }
+    }else if(currentState === "breath_Check"){
+    background("#F35F3C");
+    image(breath_check,width/2,height/2);
+    }else if(currentState === "check_b_type"){
+    background("#F35F3C");
+    image(check_b_type,width/2,height/2);
     }else if(currentState === "cprC1"){
       cprtpass = millis()-cprtime;
     if(cprtpass > 6000){
@@ -331,55 +310,16 @@ function draw(){
     image(promiseP,width/2,height/2);
     }else if(currentState === "promise_seal"){
     background("#F35F3C");
-    if(genderState === 1){
-      image(promiseSM,width/2,height/2);
-    }else if(genderState === 2){
     image(promiseS,width/2,height/2);
-    }
     }else if(currentState === "b_normal"){
     background("#F35F3C");
     image(normal_breath,width/2,height/2);
-    }else if(currentState === "promiseNBT"){
-    background("#F35F3C");
-   if(genderState === 1){
-      image(promiseNBTM,width/2,height/2);
-    }else if(genderState === 2){
-    image(promiseNBT,width/2,height/2);
-    }
-    if(millis() - promise_start >3000){
-      currentState = "promiseNBP";
-    }
-  }else if(currentState === "promiseNBP"){
-    background("#F35F3C");
-    if(genderState === 1){
-      image(promiseNBPM,width/2,height/2);
-    }else if(genderState === 2){
-    image(promiseNBP,width/2,height/2);
-    }
     }else if(currentState === "cprD_yes"){
     background("#F35F3C");
     image(cprD_yes,width/2,height/2);
-    }else if(currentState === "dcantsafe"){
+    }else if(currentState === "cpr_check_response"){
     background("#F35F3C");
-    image(dcantsafe,width/2,height/2);
-    }else if(currentState === "promiseDT"){
-    background("#F35F3C");
-    if(genderState === 1){
-      image(promiseDTM,width/2,height/2);
-    }else if(genderState === 2){
-    image(promiseDT,width/2,height/2);
-    }
-      if(millis() - promise_start >3000){
-      currentState = "promiseDP";
-    }
-    
-    }else if(currentState === "promiseDP"){
-    background("#F35F3C");
-    if(genderState === 1){
-      image(promiseDPM,width/2,height/2);
-    }else if(genderState === 2){
-    image(promiseDP,width/2,height/2);
-    }
+    image(check_response ,width/2,height/2);
     }
 
   // debug helpers
@@ -388,9 +328,6 @@ function draw(){
    text(" y : " + mouseY,80,40);
   text("width/2 : " + width ,120,40);
   text(" height/2 : " + height ,200,40);
-  text("bno: "+breath_no ,350,40);
-   text("s: "+currentState ,200,180);
-  text("t: "+testcount ,250,140);
   //______________________________________
   
 }
@@ -403,27 +340,7 @@ function mousePressed(){
       mouseY > beginy &&
       mouseY < beginy + beginh
     ) {
-      currentState = "gender_screen";
-      console.log(currentState);
-      }
-  }else if(currentState == "gender_screen"){
-    if (
-      mouseX > rajax &&
-      mouseX < rajax + rajaw &&
-      mouseY > rajay &&
-      mouseY < rajay + rajah
-    ) {
       currentState = "intro";
-      genderState = 1;
-      console.log(currentState);
-      }else if (
-      mouseX > ranix &&
-      mouseX < ranix + raniw &&
-      mouseY > raniy &&
-      mouseY < raniy + ranih
-    ) {
-      currentState = "intro";
-      genderState = 2;
       console.log(currentState);
       }
   }else if(currentState == "intro"){
@@ -463,7 +380,6 @@ function mousePressed(){
       mouseY < yesy + yesh
     ) {
       currentState = "cprR";
-      response_time = millis();
       console.log(currentState);
       }else if (
       mouseX > nox &&
@@ -471,116 +387,25 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-      currentState = "dcantsafe";
+      currentState = "cprD_yes";
       console.log(currentState);
       }
-  }else if(currentState == "dcantsafe"){
-    if (
-      mouseX > sqnextx &&
-      mouseX < sqnextx + sqnextw &&
-      mouseY > sqnexty &&
-      mouseY < sqnexty + sqnexth
-    ) {
-      currentState = "promiseDT";
-       promise_start = millis();
-      console.log(currentState);
-      }
-  }else if(currentState == "promiseDP"){
-   if (
-      mouseX > promisex &&
-      mouseX < promisex + promisew &&
-      mouseY > promisey &&
-      mouseY < promisey + promiseh
-    ){
-      currentState = "promise_seal";
-      console.log(currentState);
-    }
-     
   }else if(currentState == "cpr_check_response"){
-     if (
-      mouseX > nox &&
-      mouseX < nox + now &&
-      mouseY > noy &&
-      mouseY < noy + noh
-    ) {
-       if(breath_no % 3 == 0)
-       {
-         testcount= 10;
-       gasp_aud.play();
-         testcount= 20;
-       }
-     // currentState = "cprB";
-        //breath_time = millis();
-       
-      console.log(currentState);
-     }
-
-      } else if (currentState == "breath_Check"){
     if (
       mouseX > yesx &&
       mouseX < yesx + yesw &&
       mouseY > yesy &&
       mouseY < yesy + yesh
     ) {
-      currentState = "check_b_type";
+      currentState = "concious";
       console.log(currentState);
-      } else if (
+      }else if (
       mouseX > nox &&
       mouseX < nox + now &&
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-      currentState = "call";
-      console.log(currentState);
-      }
-  }else if(currentState == "check_b_type"){
-    if (
-      mouseX > normalx &&
-      mouseX < normalx + normalw &&
-      mouseY > normaly &&
-      mouseY < normaly + normalh
-    ) {
-      currentState = "b_normal";
-      console.log(currentState);
-      }else if (
-      mouseX > abnormalx &&
-      mouseX < abnormalx + abnormalw &&
-      mouseY > abnormaly &&
-      mouseY < abnormaly + abnormalh
-    ) {
-      currentState = "call";
-      console.log(currentState);
-      }
-  }else if(currentState == "b_normal"){
-    if (
-      mouseX > sqnextx &&
-      mouseX < sqnextx + sqnextw &&
-      mouseY > sqnexty &&
-      mouseY < sqnexty + sqnexth
-    ) {
-      currentState = "promiseNBT";
-       promise_start = millis();
-      console.log(currentState);
-      }
-  }else if(currentState == "promiseNBP"){
-   if (
-      mouseX > promisex &&
-      mouseX < promisex + promisew &&
-      mouseY > promisey &&
-      mouseY < promisey + promiseh
-    ){
-      currentState = "promise_seal";
-      console.log(currentState);
-    }
-     
-  }else if(currentState == "call"){
-    if (
-      mouseX > nextx &&
-      mouseX < nextx + nextw &&
-      mouseY > nexty &&
-      mouseY < nexty + nexth
-    ) {
-      currentState = "call1";
+      currentState = "cprS";
       console.log(currentState);
       }
   }else if(currentState == "cprS"){
@@ -622,6 +447,60 @@ function mousePressed(){
     ) {
       currentState = "cprCalling";
       call_time = millis();
+      console.log(currentState);
+      }
+  }else if(currentState == "cprA"){
+    if (
+      mouseX > donex &&
+      mouseX < donex + donew &&
+      mouseY > doney &&
+      mouseY < doney + doneh
+    ) {
+      currentState = "cprB";
+      breathe_time = millis();
+      console.log(currentState);
+      if(breath_no % 3 === 0){
+       gasp_aud.play();
+      }else if(breath_no % 5 === 0){
+      normal_breath_aud.play();
+      }
+  }
+  }else if(currentState == "breath_Check"){
+    if (
+      mouseX > yesx &&
+      mouseX < yesx + yesw &&
+      mouseY > yesy &&
+      mouseY < yesy + yesh
+    ) {
+      currentState = "check_b_type";
+      console.log(currentState);
+      }else if (
+      mouseX > nox &&
+      mouseX < nox + now &&
+      mouseY > noy &&
+      mouseY < noy + noh
+    ) {
+      currentState = "cprC1";
+      cprtime = millis();
+      console.log(currentState);
+      }
+  }else if(currentState == "check_b_type"){
+    if (
+      mouseX > normalx &&
+      mouseX < normalx + normalw &&
+      mouseY > normaly &&
+      mouseY < normaly + normalh
+    ) {
+      currentState = "b_normal";
+      console.log(currentState);
+      }else if (
+      mouseX > abnormalx &&
+      mouseX < abnormalx + abnormalw &&
+      mouseY > abnormaly &&
+      mouseY < abnormaly + abnormalh
+    ) {
+      currentState = "cprC1";
+      cprtime = millis();
       console.log(currentState);
       }
   }else if(currentState == "cprC1"){
@@ -955,5 +834,3 @@ function touchStarted() {
   mousePressed(); // Use the same logic
   return false; // Prevent default browser touch behavior
 }
-
-
