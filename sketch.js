@@ -640,8 +640,18 @@ function mousePressed(){
       mouseY < cally + callh
     ) {
       currentState = "cprCalling";
-      call_time = millis();
       console.log(currentState);
+      }
+  }else if(currentState == "cprCalling"){
+    if (
+      mouseX > speakerx &&
+      mouseX < speakerx + speakerw &&
+      mouseY > speakery &&
+      mouseY < speakery + speakerh
+    ) {
+      currentState = "speakeradded";
+      console.log(currentState);
+      call_time = millis();
       }
   }else if(currentState == "cprC1"){
     if (
