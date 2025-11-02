@@ -18,7 +18,8 @@ let cprA;
 let cprB;
 let breath_no ;
 let normal_breath_aud,gasp_aud;
-let breathe_time = 0;
+let breath_time = 0;
+let breathtimepass = 0;
 let breath_check;
 let check_b_type;
 let normal_breath;
@@ -245,10 +246,6 @@ function draw(){
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
-      if(millis() - breathe_time > 10000 ){
-        currentState = "breath_Check";
-        console.log(currentState); 
-      }
     }else if(currentState === "breath_Check"){
     background("#F35F3C");
     image(breath_check,width/2,height/2);
@@ -507,11 +504,15 @@ function mousePressed(){
       mouseY > noy &&
       mouseY < noy + noh
     ) {
-      //normal_breath_aud.play();
+       if(breath_no % 3 == 0)
+       {
+         testcount= 10;
        gasp_aud.play();
+         testcount= 20;
+       }
+     // currentState = "cprB";
+        //breath_time = millis();
        
-      currentState = "cprB";
-      breathe_time = millis();
       console.log(currentState);
      }
 
@@ -679,7 +680,7 @@ function mousePressed(){
   }else if(currentState == "play"){
     compression_count += 1;
     console.log(compression_count);
-    press_music.play();
+    //press_music.play();
     now = millis();
     if (lastTouchTime !== 0) {
       interval = now - lastTouchTime;
