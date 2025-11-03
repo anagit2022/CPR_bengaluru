@@ -86,6 +86,7 @@ function preload(){
   call112 = loadImage("call 112.png");
   cprCalling = loadImage("addspeaker (1).png");
   speakeradded = loadImage("speaker added.png");
+ 
   // AED
   cprA = loadImage("cprA (1).png");
 // check for breathing
@@ -99,7 +100,7 @@ function preload(){
   cprC1 = loadImage("giffycanvas - 2025-10-31T203941.669.gif");
   cprC2 = loadImage("interlock (3).png");
   cprC3 = loadImage("straight elbows (3).png");
-  cprC4 = loadImage("cprC4.gif");
+  cprC4 = loadImage("giffycanvas - 2025-10-31T204304.927.gif");
   cprBegin = loadImage("cprBegin.png");
   // play screen
   playimg = loadImage("eyes+ (2).png");
