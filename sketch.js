@@ -264,9 +264,9 @@ function draw(){
     image(cprR,width/2,height/2);
      vol = mic.getLevel();
      console.log(vol);
-    if(vol > 0.5){
+    if(vol > 0.05){
     console.log("hello i am okay");
-    okayVoice.play();
+   // okayVoice.play();
     responseState = 1;
     console.log(responseState);
   }else
