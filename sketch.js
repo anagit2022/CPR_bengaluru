@@ -64,6 +64,7 @@ let win,aed,amb,late;
 let promiseT,promiseTM,promiseP,promisePM,promiseS,promiseSM,promiseDT,promiseDTM;
 let promiseNBT,promiseNBTM,promiseNBP,promiseNBPM;
 let promiseRT, promiseRTM, promiseRP, promiseRPM;
+let promiseLT, promiseLTM, promiseLP, promiseLPM;
 let promise_time = 0;
 let promise_start=0;
 // track inactivity
@@ -141,10 +142,13 @@ function preload(){
   promiseRTM = loadImage("giffycanvas - 2025-11-03T185651.612.gif");
   promiseRP = loadImage("PromiseRP (1).png");
   promiseRPM = loadImage("PromiseRPM.png");
+  // PROMISE FOR DELAYED CPR
+  promiseLT = loadImage("giffycanvas - 2025-11-03T231431.622.gif");
+  promiseLTM = loadImage("giffycanvas - 2025-11-03T231342.233.gif");
+  promiseLP = loadImage("PromiseLP.png");
+  promiseLPM = loadImage("PromiseLPM.png");
   // promise sounds 
 promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
-  
-
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
