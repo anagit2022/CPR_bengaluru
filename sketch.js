@@ -256,7 +256,7 @@ function draw(){
      console.log(vol);
     if(vol > 0.5){
     console.log("hello i am okay");
-    //okayVoice.play();
+    okayVoice.play();
     responseState = 1;
     console.log(responseState);
   }else
@@ -740,7 +740,7 @@ function mousePressed(){
   }else if(currentState == "play"){
     compression_count += 1;
     console.log(compression_count);
-    //press_music.play();
+    press_music.play();
     now = millis();
     if (lastTouchTime !== 0) {
       interval = now - lastTouchTime;
