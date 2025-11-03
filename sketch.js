@@ -65,6 +65,8 @@ let promise_start=0;
 // track inactivity
 let pressed_time = 0 ;
 lastTouchElapsed = 0;
+// sound 
+promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
 
 function preload(){
   begin_screen = loadImage("begin (1).png");
@@ -795,6 +797,7 @@ function mousePressed(){
       mouseY < promisey + promiseh
     ){
       currentState = "promise_seal";
+     promise_sound.play();
       console.log(currentState);
     }
      
