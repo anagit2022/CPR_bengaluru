@@ -12,6 +12,7 @@ let genderState = 0;
   let call_time = 0; 
   let check_response;
   let responseState; 
+  let mic ; 
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
 // AED
