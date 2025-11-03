@@ -131,7 +131,9 @@ function setup(){
   breath_no = floor(random(11));
   maxTotalCompressions = floor(random(30, 50));
   task_time = 600 * maxTotalCompressions+3000;
-  console.log(breath_no)
+  console.log(breath_no);
+  mic = new p5.AudioIn();
+  mic.start();
   imageMode(CENTER);
   // begin button
   beginx = windowWidth*0.2;
