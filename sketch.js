@@ -92,9 +92,9 @@ function preload(){
   check_b_type = loadImage("btypecheck.png");
   normal_breath = loadImage("normalbreathing.png");
   // cpr compressions instructions
-  cprC1 = loadImage("cprC1.gif");
-  cprC2 = loadImage("cprC2.png");
-  cprC3 = loadImage("cprC3.png");
+  cprC1 = loadImage("giffycanvas - 2025-10-31T203941.669.gif");
+  cprC2 = loadImage("interlock (3).png");
+  cprC3 = loadImage("straight elbows (3).png");
   cprC4 = loadImage("cprC4.gif");
   cprBegin = loadImage("cprBegin.png");
   // play screen
