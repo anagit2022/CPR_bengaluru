@@ -13,6 +13,7 @@ let genderState = 0;
   let check_response;
   let responseState; 
   let responded;
+  let wake;
   let mic ; 
   let vol;
 //call 112 or shout
@@ -82,6 +83,7 @@ function preload(){
   dcantsafe = loadImage("Dcan't safe (3).png");
   check_response = loadImage("response check.png");
   responded = loadImage("responded.png");
+  wake = loadImage("giffycanvas - 2025-11-03T203702.641.gif");
 //call 108 or shout
   call = loadImage("call.png");
   callblank = loadImage("call blank112.png");
@@ -285,7 +287,7 @@ function draw(){
     }
     
       if(responseState === 1){
-        currentState = "win";
+        currentState = "wake";
         //cprR_aud.stop();
         
       }
@@ -294,6 +296,27 @@ function draw(){
       if(millis()-response_time > 10000){
       currentState = "cpr_check_response";
       }
+    }else if(currentState === "wake"){
+    background("#F35F3C");
+    image(wake,width/2,height/2);
+    }else if(currentState === "promiseRT"){
+    background("#F35F3C");
+    if(genderState === 1){
+      image(promiseRTM,width/2,height/2);
+    }else if(genderState === 2){
+    image(promiseRT,width/2,height/2);
+    }
+      if(millis() - promise_start >3000){
+      currentState = "promiseRP";
+    }
+    
+    }else if(currentState === "promiseRP"){
+    background("#F35F3C");
+    if(genderState === 1){
+      image(promiseRPM,width/2,height/2);
+    }else if(genderState === 2){
+    image(promiseRP,width/2,height/2);
+    }
     }else if(currentState === "cpr_check_response"){
     background("#F35F3C");
     image(check_response ,width/2,height/2);
@@ -783,6 +806,18 @@ function mousePressed(){
       mouseY < lasty + lasth
     ){
       currentState = "promiseT";
+     promise_start = millis();
+      console.log(currentState);
+    }
+     
+  }else if(currentState == "wake"){
+   if (
+      mouseX > lastx &&
+      mouseX < lastx + lastw &&
+      mouseY > lasty &&
+      mouseY < lasty + lasth
+    ){
+      currentState = "promiseRT";
      promise_start = millis();
       console.log(currentState);
     }
