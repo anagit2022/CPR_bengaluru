@@ -12,6 +12,7 @@ let genderState = 0;
   let call_time = 0; 
   let check_response;
   let responseState; 
+  let responded;
   let mic ; 
   let vol;
 //call 112 or shout
@@ -61,6 +62,7 @@ let win,aed,amb,late;
 // promise screen
 let promiseT,promiseTM,promiseP,promisePM,promiseS,promiseSM,promiseDT,promiseDTM;
 let promiseNBT,promiseNBTM,promiseNBP,promiseNBPM;
+let promiseRT, promiseRTM, promiseRP, promiseRPM;
 let promise_time = 0;
 let promise_start=0;
 // track inactivity
@@ -79,6 +81,7 @@ function preload(){
   cprD_yes = loadImage("Dnot safe.png");
   dcantsafe = loadImage("Dcan't safe (3).png");
   check_response = loadImage("response check.png");
+  responded = loadImage("responded.png");
 //call 108 or shout
   call = loadImage("call.png");
   callblank = loadImage("call blank112.png");
@@ -131,9 +134,14 @@ function preload(){
   promiseNBTM = loadImage("giffycanvas - 2025-10-31T141216.810.gif");
   promiseNBP = loadImage("PromisesealNB.png");
   promiseNBPM = loadImage("PromisesealNBM.png");
-  // promise sounds
-  // sound 
+  // PROMISE FOR RESPONDED
+  promiseRT = loadImage("giffycanvas - 2025-11-03T185651.612.gif");
+  promiseRTM = loadImage("giffycanvas - 2025-11-03T193922.966.gif");
+  promiseRP = loadImage("PromiseRP.png");
+  promiseRPM = loadImage("PromiseRPM.png");
+  // promise sounds 
 promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
+  
 
 }
 function setup(){
