@@ -109,6 +109,7 @@ function preload(){
   heartimg = loadImage("heart.png");
   meterimg = loadImage("bpm meter86.png");
   arrowimg = loadImage("arrow2.png");
+  press_music = loadSound("mixkit-message-pop-alert-2354.mp3");
   // wincreens
   win = loadImage("revived.gif");
   aed = loadImage("AED_FOUND.gif");
