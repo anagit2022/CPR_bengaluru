@@ -117,7 +117,7 @@ function preload(){
   press_music = loadSound("mixkit-message-pop-alert-2354.mp3");
   // wincreens
   win = loadImage("revived.gif");
-  aed = loadImage("AED_FOUND.gif");
+  aed = loadImage("giffycanvas (89).gif");
   amb = loadImage("amb.gif");
   late = loadImage("delayed.png");
   // promise screen
