@@ -11,6 +11,7 @@ let genderState = 0;
   let response_time = 0;
   let call_time = 0; 
   let check_response;
+  let responseState; 
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
 // AED
@@ -248,6 +249,31 @@ function draw(){
     }else if(currentState === "cprR"){
     background("#FFC5B7");
     image(cprR,width/2,height/2);
+     let vol = mic.getLevel();
+     console.log(vol);
+    if(vol>0.3){
+    console.log("hello i am okay");
+    //okayVoice.play();
+    responseState = 1;
+    console.log(responseState);
+  }else
+    {
+      console.log(" no response");
+      responseState = 0;
+      console.log(responseState);
+    }
+    
+      if(responseState === 1){
+        currentState = "win";
+        //cprR_aud.stop();
+        
+      }
+    if(respondTime>10000){
+      
+          currentState = "cpr_check_response"
+         // cprR_aud1.play();
+        
+    }
     // checking time since response check started
      // text(millis()-response_time,50,50);
       if(millis()-response_time >= 6000){
