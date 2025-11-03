@@ -137,8 +137,8 @@ function preload(){
   promiseNBP = loadImage("PromisesealNB.png");
   promiseNBPM = loadImage("PromisesealNBM.png");
   // PROMISE FOR RESPONDED
-  promiseRT = loadImage("giffycanvas - 2025-11-03T185651.612.gif");
-  promiseRTM = loadImage("giffycanvas - 2025-11-03T193922.966.gif");
+  promiseRT = loadImage("giffycanvas - 2025-11-03T193922.966.gif");
+  promiseRTM = loadImage("giffycanvas - 2025-11-03T185651.612.gif");
   promiseRP = loadImage("PromiseRP.png");
   promiseRPM = loadImage("PromiseRPM.png");
   // promise sounds 
