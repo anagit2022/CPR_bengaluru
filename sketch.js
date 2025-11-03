@@ -822,6 +822,18 @@ function mousePressed(){
       console.log(currentState);
     }
      
+  }else if(currentState == "promiseRP"){
+   if (
+      mouseX > promisex &&
+      mouseX < promisex + promisew &&
+      mouseY > promisey &&
+      mouseY < promisey + promiseh
+    ){
+      currentState = "promise_seal";
+     promise_sound.play();
+      console.log(currentState);
+    }
+     
   }else if(currentState == "aed"){
    if (
       mouseX > lastx &&
