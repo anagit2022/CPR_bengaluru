@@ -295,6 +295,7 @@ function draw(){
     image(speakeradded,width/2,height/2);
     if(millis()- call_time > 500){
        currentState ="cprC1";
+      cprtime = millis();
        console.log(currentState);
       }
     }else if(currentState === "cprC1"){
