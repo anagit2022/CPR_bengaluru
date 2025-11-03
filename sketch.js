@@ -13,6 +13,7 @@ let genderState = 0;
   let check_response;
   let responseState; 
   let mic ; 
+  let vol;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
 // AED
@@ -252,9 +253,9 @@ function draw(){
     }else if(currentState === "cprR"){
     background("#FFC5B7");
     image(cprR,width/2,height/2);
-     let vol = mic.getLevel();
+     vol = mic.getLevel();
      console.log(vol);
-    if(vol>0.3){
+    if(vol>0.01){
     console.log("hello i am okay");
     //okayVoice.play();
     responseState = 1;
@@ -438,7 +439,7 @@ function draw(){
   text(" height/2 : " + height ,200,40);
   text("bno: "+breath_no ,350,40);
    text("s: "+currentState ,200,180);
-  text("t: "+testcount ,250,140);
+  text("v: "+vol ,250,140);
   //______________________________________
   
 }
