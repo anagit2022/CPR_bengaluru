@@ -16,6 +16,7 @@ let genderState = 0;
   let vol;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
+let ring,dial;
 // AED
 let cprA;
 // check breathing
@@ -86,7 +87,8 @@ function preload(){
   call112 = loadImage("call 112.png");
   cprCalling = loadImage("addspeaker (1).png");
   speakeradded = loadImage("speaker added.png");
- 
+  ring = loadSound("mixkit-office-telephone-ring-1350.wav");
+  dial = loadSound("9aud.mp3");
   // AED
   cprA = loadImage("cprA (1).png");
 // check for breathing
@@ -649,6 +651,7 @@ function mousePressed(){
       mouseY < call1y + call1h
     ) {
       currentState = "call1";
+      dial.play();
       console.log(currentState);
       }
   }else if(currentState == "call1"){
@@ -659,6 +662,7 @@ function mousePressed(){
       mouseY < call1y + call1h
     ) {
       currentState = "call11";
+      dial.play();
       console.log(currentState);
       }
   }else if(currentState == "call11"){
@@ -669,6 +673,7 @@ function mousePressed(){
       mouseY < call2y + call2h
     ) {
       currentState = "call112";
+      dial.play();
       console.log(currentState);
       }
   }else if(currentState == "call112"){
@@ -679,6 +684,7 @@ function mousePressed(){
       mouseY < cally + callh
     ) {
       currentState = "cprCalling";
+      ring.play();
       console.log(currentState);
       }
   }else if(currentState == "cprCalling"){
