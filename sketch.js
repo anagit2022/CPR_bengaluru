@@ -82,7 +82,7 @@ function preload(){
   call1 = loadImage("call 1.png");
   call11 = loadImage("call 11.png");
   call112 = loadImage("call 112.png");
-  cprCalling = loadImage("addspeaker.png");
+  cprCalling = loadImage("addspeaker (1).png");
   speakeradded = loadImage("speaker added.png");
   // AED
   cprA = loadImage("cprA (1).png");
