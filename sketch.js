@@ -139,7 +139,7 @@ function preload(){
   // PROMISE FOR RESPONDED
   promiseRT = loadImage("giffycanvas - 2025-11-03T193922.966.gif");
   promiseRTM = loadImage("giffycanvas - 2025-11-03T185651.612.gif");
-  promiseRP = loadImage("PromiseRP.png");
+  promiseRP = loadImage("PromiseRP (1).png");
   promiseRPM = loadImage("PromiseRPM.png");
   // promise sounds 
 promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
