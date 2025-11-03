@@ -906,7 +906,7 @@ function playScreen(){
   text("width/2 : " + width ,120,40);
   text(" height/2 : " + height ,200,40);
   image(playimg, windowWidth/2-40,windowHeight/2);
-  image(heartimg,343,33);
+  image(heartimg,350,66);
   // static rect
   push();
   noStroke();
