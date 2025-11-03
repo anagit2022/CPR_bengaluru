@@ -65,8 +65,8 @@ let promise_start=0;
 // track inactivity
 let pressed_time = 0 ;
 lastTouchElapsed = 0;
-// sound 
-promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
+// sounds
+let promise_sound;
 
 function preload(){
   begin_screen = loadImage("begin (1).png");
@@ -127,6 +127,10 @@ function preload(){
   promiseNBTM = loadImage("giffycanvas - 2025-10-31T141216.810.gif");
   promiseNBP = loadImage("PromisesealNB.png");
   promiseNBPM = loadImage("PromisesealNBM.png");
+  // promise sounds
+  // sound 
+promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
+
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
