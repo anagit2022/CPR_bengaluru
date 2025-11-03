@@ -271,15 +271,9 @@ function draw(){
         //cprR_aud.stop();
         
       }
-    if(response_time>10000){
-      
-          currentState = "cpr_check_response"
-         // cprR_aud1.play();
-        
-    }
     // checking time since response check started
      // text(millis()-response_time,50,50);
-      if(millis()-response_time >= 6000){
+      if(millis()-response_time > 10000){
       currentState = "cpr_check_response";
       }
     }else if(currentState === "cpr_check_response"){
