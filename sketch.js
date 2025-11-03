@@ -271,7 +271,7 @@ function draw(){
         //cprR_aud.stop();
         
       }
-    if(respondTime>10000){
+    if(response_time>10000){
       
           currentState = "cpr_check_response"
          // cprR_aud1.play();
