@@ -551,6 +551,7 @@ function mousePressed(){
       mouseY < promisey + promiseh
     ){
       currentState = "promise_seal";
+     promise_sound.play();
       console.log(currentState);
     }
      
@@ -630,6 +631,7 @@ function mousePressed(){
       mouseY < promisey + promiseh
     ){
       currentState = "promise_seal";
+     promise_sound.play();
       console.log(currentState);
     }
      
