@@ -66,7 +66,6 @@ let promise_start=0;
 let pressed_time = 0 ;
 lastTouchElapsed = 0;
 
-  
 function preload(){
   begin_screen = loadImage("begin (1).png");
   gender_screen = loadImage("f.png");
@@ -255,7 +254,7 @@ function draw(){
     image(cprR,width/2,height/2);
      vol = mic.getLevel();
      console.log(vol);
-    if(vol>0.01){
+    if(vol>0.3){
     console.log("hello i am okay");
     //okayVoice.play();
     responseState = 1;
