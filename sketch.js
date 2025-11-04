@@ -703,6 +703,7 @@ function mousePressed(){
       mouseY < normaly + normalh
     ) {
       currentState = "b_normal";
+      ifbreathnormalaud.play();
       console.log(currentState);
       }else if (
       mouseX > abnormalx &&
@@ -721,6 +722,7 @@ function mousePressed(){
       mouseY < sqnexty + sqnexth
     ) {
       currentState = "promiseNBT";
+      ifbreathnormalaud.stop();
        promise_start = millis();
       console.log(currentState);
       }
