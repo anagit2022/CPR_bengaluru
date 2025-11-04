@@ -24,8 +24,10 @@ let genderState = 0;
   let cantsafeaud;
   let promisedtaud;
   let promisertaud;
+  let promisebtaud;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
+  let victim;
   let callaud,call112aud,addspeakeraud;
 let ring,dial;
 // AED
@@ -118,6 +120,7 @@ function preload(){
   call112 = loadImage("call 112.png");
   cprCalling = loadImage("addspeaker (1).png");
   speakeradded = loadImage("speaker added.png");
+  victim = loadImage("incardiacarrest.png"):
   ring = loadSound("mixkit-office-telephone-ring-1350.wav");
   dial = loadSound("9aud.mp3");
   // AED
@@ -133,6 +136,7 @@ function preload(){
   breath_check = loadImage("breathing check.png");
   check_b_type = loadImage("btypecheck.png");
   normal_breath = loadImage("normalbreathing.png");
+  promisebtaud = loadImage("ElevenLabs_2025-11-04T11_55_06_Alice_pre_sp100_s50_sb75_v3.mp3"):
   // cpr compressions instructions
   cprC1 = loadImage("giffycanvas - 2025-10-31T203941.669.gif");
   cprC2 = loadImage("interlock (3).png");
@@ -735,6 +739,7 @@ function mousePressed(){
     ) {
       currentState = "promiseNBT";
       ifbreathnormalaud.stop();
+      promisebtaud.play();
        promise_start = millis();
       console.log(currentState);
       }
@@ -746,6 +751,7 @@ function mousePressed(){
       mouseY < promisey + promiseh
     ){
       currentState = "promise_seal";
+      promisebtaud.stop();
      promise_sound.play();
      promisesealedaud.play();
       console.log(currentState);
