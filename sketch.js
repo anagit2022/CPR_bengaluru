@@ -401,11 +401,19 @@ function draw(){
     }else if(currentState === "speakeradded"){
     background("#F35F3C");
     image(speakeradded,width/2,height/2);
-    if(millis()- call_time > 2000){
+    if(millis()- call_time > 600){
+       currentState ="victim";    
+       console.log(currentState);
+     }
+    }else if(currentState === "victim"){
+    background("#F35F3C");
+    image(victim,width/2,height/2);
+     if(millis()- call_time > 1800){
        currentState ="cprC1";
       cprtime = millis();
+      
        console.log(currentState);
-      }
+     }
     }else if(currentState === "cprC1"){
       cprtpass = millis()-cprtime;
     if(cprtpass > 6000){
