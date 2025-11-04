@@ -26,6 +26,7 @@ let genderState = 0;
   let promisertaud;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
+  let callaud,call112aud,addspeakeraud;
 let ring,dial;
 // AED
 let cprA;
@@ -108,6 +109,9 @@ function preload(){
   promisertaud = loadSound("ElevenLabs_2025-11-04T11_56_30_Alice_pre_sp100_s50_sb75_v3.mp3");
 //call 108 or shout
   call = loadImage("call.png");
+  callaud = loadSound("ElevenLabs_2025-11-04T11_58_20_Alice_pre_sp100_s50_sb75_v3.mp3"):
+  call112aud = loadSound("ElevenLabs_2025-11-04T11_58_59_Alice_pre_sp100_s50_sb75_v3.mp3");
+  addspeakeraud = loadSound("ElevenLabs_2025-11-04T12_00_41_Alice_pre_sp100_s50_sb75_v3.mp3");
   callblank = loadImage("call blank112.png");
   call1 = loadImage("call 1.png");
   call11 = loadImage("call 11.png");
@@ -697,6 +701,8 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
       currentState = "call";
+      callaud.play();
+      normal_abnormalbaud.stop();
       console.log(currentState);
       }
   }else if(currentState == "check_b_type"){
@@ -716,6 +722,8 @@ function mousePressed(){
       mouseY < abnormaly + abnormalh
     ) {
       currentState = "call";
+      callaud.play();
+      normal_abnormalbaud.stop();
       console.log(currentState);
       }
   }else if(currentState == "b_normal"){
@@ -751,6 +759,8 @@ function mousePressed(){
       mouseY < nexty + nexth
     ) {
       currentState = "callblank";
+      callaud.stop();
+      call112aud.play();
       console.log(currentState);
       }
   }else if(currentState == "callblank"){
@@ -761,6 +771,7 @@ function mousePressed(){
       mouseY < call1y + call1h
     ) {
       currentState = "call1";
+      call112aud.stop();
       dial.play();
       console.log(currentState);
       }
@@ -795,6 +806,7 @@ function mousePressed(){
     ) {
       currentState = "cprCalling";
       ring.play();
+      addspeakeraud.play();
       console.log(currentState);
       }
   }else if(currentState == "cprCalling"){
