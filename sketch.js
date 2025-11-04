@@ -23,6 +23,7 @@ let genderState = 0;
   let diditwake;
   let cantsafeaud;
   let promisedtaud;
+  let promisertaud;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
 let ring,dial;
@@ -104,6 +105,7 @@ function preload(){
   responded = loadImage("responded.png");
   wake = loadImage("giffycanvas - 2025-11-03T203702.641.gif");
   respondedaud = loadSound("I_am_ok.mp3");
+  promisertaud = loadSound("ElevenLabs_2025-11-04T11_56_30_Alice_pre_sp100_s50_sb75_v3.mp3");
 //call 108 or shout
   call = loadImage("call.png");
   callblank = loadImage("call blank112.png");
@@ -892,6 +894,7 @@ function mousePressed(){
     ){
       currentState = "promiseRT";
      checkresponseaud.stop();
+      promisertaud.play();
      promise_start = millis();
       console.log(currentState);
     }
@@ -906,6 +909,7 @@ function mousePressed(){
       currentState = "promise_seal";
      promise_sound.play();
      promisesealedaud.play();
+      promisertaud.stop();
       console.log(currentState);
     }
      
