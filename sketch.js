@@ -397,7 +397,7 @@ function draw(){
     }else if(currentState === "speakeradded"){
     background("#F35F3C");
     image(speakeradded,width/2,height/2);
-    if(millis()- call_time > 500){
+    if(millis()- call_time > 2000){
        currentState ="cprC1";
       cprtime = millis();
        console.log(currentState);
