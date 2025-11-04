@@ -104,7 +104,7 @@ function preload(){
   diditwake = loadSound("did_spongy_respond.mp3");
   responded = loadImage("responded.png");
   wake = loadImage("giffycanvas - 2025-11-03T203702.641.gif");
-  respondedaud = loadSound("I_am_ok.mp3");
+  respondedaud = loadSound("ElevenLabs_2025-06-I am .mp3");
   promisertaud = loadSound("ElevenLabs_2025-11-04T11_56_30_Alice_pre_sp100_s50_sb75_v3.mp3");
 //call 108 or shout
   call = loadImage("call.png");
