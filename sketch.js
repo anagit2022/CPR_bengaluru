@@ -307,6 +307,8 @@ function draw(){
     if(vol > 0.15){
     console.log("hello i am okay");
    // okayVoice.play();
+      respondedaud.play();
+      checkresponseaud.stop();
     responseState = 1;
     console.log(responseState);
   }else
@@ -318,8 +320,6 @@ function draw(){
     
       if(responseState === 1){
         currentState = "wake";
-        checkdangeraud.stop();
-        respondedaud.play();
         //cprR_aud.stop();
         
       }
