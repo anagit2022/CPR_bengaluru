@@ -584,6 +584,7 @@ function mousePressed(){
       mouseY < yesy + yesh
     ) {
       currentState = "cprR";
+      checkresponseaud.play();
       checkdangeraud.stop();
       response_time = millis();
       console.log(currentState);
@@ -606,6 +607,7 @@ function mousePressed(){
       mouseY < yesy + yesh
     ) {
       currentState = "cprR";
+      checkresponseaud.play();
       notsafeaud.stop();
       response_time = millis();
       console.log(currentState);
