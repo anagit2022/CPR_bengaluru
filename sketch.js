@@ -1,5 +1,6 @@
 
 let begin_screen,gender_screen,intro_screen;
+let introaud;
 // debug help
 let testcount = 0;
 let cprD;
@@ -16,6 +17,10 @@ let genderState = 0;
   let wake;
   let mic ; 
   let vol;
+  let checkdangeraud;
+  let checkresponseaud;
+  let respondedaud;
+  let diditwake;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
 let ring,dial;
@@ -30,6 +35,10 @@ let breathtimepass = 0;
 let breath_check;
 let check_b_type;
 let normal_breath;
+let checkbreathingaud;
+let couldobserveb;
+let normal_abnormalbaud;
+let ifbreathnormalaud;
 //cpr compressions instructions
 let cprC1;
 let cprtime = 0;
@@ -77,14 +86,19 @@ function preload(){
   begin_screen = loadImage("begin (1).png");
   gender_screen = loadImage("f.png");
   intro_screen = loadImage("intro_screen.png");
+  introaud = loadSound("ElevenLabs_2025-06-15T03_03_50_Alice_pre_sp100_s50_sb75_v3.mp3");
   // check for danger if safe or not before cprR(esponse)
   cprD = loadImage("d.png");
+  checkdangeraud = loadSound("check_danger?.mp3");
   cprR = loadImage("r.png");
+  checkresponseaud = loadSound("check_for_response.mp3"); 
   cprD_yes = loadImage("Dnot safe.png");
   dcantsafe = loadImage("Dcan't safe (3).png");
   check_response = loadImage("response check.png");
+  diditwake = loadImage("did_spongy_respond.mp3");
   responded = loadImage("responded.png");
   wake = loadImage("giffycanvas - 2025-11-03T203702.641.gif");
+  respondedaud = loadSound("I_am_ok.mp3");
 //call 108 or shout
   call = loadImage("call.png");
   callblank = loadImage("call blank112.png");
@@ -100,6 +114,10 @@ function preload(){
 // check for breathing
   cprB = loadImage("b.png")
   normal_breath_aud = loadSound("breathing-6811.mp3");
+  checkbreathingaud = loadSound("check_if_breathing.mp3");
+  couldobserveb = loadSound("could_you_see_breathing.mp3");
+  normal_abnormalbaud = loadSound("ElevenLabs_2025-06-18T03_04_36_Alice_pre_sp100_s50_sb75_v3.mp3");
+  ifbreathnormalaud = loadSound("ElevenLabs_2025-06-17T23_01_53_Alice_pre_sp100_s50_sb75_v3.mp3"):
   gasp_aud = loadSound("gasping.m4a");
   breath_check = loadImage("breathing check.png");
   check_b_type = loadImage("btypecheck.png");
