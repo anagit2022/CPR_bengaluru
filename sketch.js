@@ -21,6 +21,7 @@ let genderState = 0;
   let checkresponseaud;
   let respondedaud;
   let diditwake;
+  let cantsafeaud;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
 let ring,dial;
@@ -81,7 +82,7 @@ let pressed_time = 0 ;
 lastTouchElapsed = 0;
 // sounds
 let promise_sound;
-
+let promisesealedaud;
 function preload(){
   begin_screen = loadImage("begin (1).png");
   gender_screen = loadImage("f.png");
@@ -91,6 +92,7 @@ function preload(){
   cprD = loadImage("d.png");
   checkdangeraud =loadSound("ElevenLabs_2025-06-15T03_04_45_Alice_pre_sp100_s50_sb75_v3.mp3");
   notsafeaud = loadSound("ElevenLabs_2025-06-15T05_45_53_Alice_pre_sp100_s50_sb75_v3.mp3");
+  cantsafeaud = loadSound("ElevenLabs_2025-11-04T07_34_48_Alice_pre_sp100_s50_sb75_v3.mp3");
   cprR = loadImage("r.png");
   checkresponseaud = loadSound("check_for_response.mp3"); 
   cprD_yes = loadImage("Dnot safe.png");
@@ -168,6 +170,7 @@ function preload(){
   promiseLPM = loadImage("PromiseLPM.png");
   // promise sounds 
 promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
+promisesealedaud = loadSound("Promise sealed ghar  (1).mp3");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
@@ -587,6 +590,7 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
       currentState = "cprD_yes";
+      notsafeaud.play();
       console.log(currentState);
       }
   }else if(currentState == "cprD_yes"){
@@ -597,6 +601,7 @@ function mousePressed(){
       mouseY < yesy + yesh
     ) {
       currentState = "cprR";
+      notsafeaud.stop();
       response_time = millis();
       console.log(currentState);
       }else if (
@@ -606,6 +611,8 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
       currentState = "dcantsafe";
+      cantsafeaud.play();
+      notsafeaud.stop();
       console.log(currentState);
       }
   }else if(currentState == "dcantsafe"){
@@ -616,6 +623,7 @@ function mousePressed(){
       mouseY < sqnexty + sqnexth
     ) {
       currentState = "promiseDT";
+      cantsafeaud.stop();
        promise_start = millis();
       console.log(currentState);
       }
@@ -627,6 +635,7 @@ function mousePressed(){
       mouseY < promisey + promiseh
     ){
       currentState = "promise_seal";
+     promisesealedaud.play();
      promise_sound.play();
       console.log(currentState);
     }
