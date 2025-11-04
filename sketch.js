@@ -89,7 +89,7 @@ function preload(){
   introaud = loadSound("ElevenLabs_2025-06-15T03_03_50_Alice_pre_sp100_s50_sb75_v3.mp3");
   // check for danger if safe or not before cprR(esponse)
   cprD = loadImage("d.png");
-  checkdangeraud = loadSound("check_danger?.mp3");
+  //checkdangeraud = loadSound("check_danger?.mp3");
   notsafeaud = loadSound("ElevenLabs_2025-06-15T05_45_53_Alice_pre_sp100_s50_sb75_v3.mp3");
   cprR = loadImage("r.png");
   checkresponseaud = loadSound("check_for_response.mp3"); 
