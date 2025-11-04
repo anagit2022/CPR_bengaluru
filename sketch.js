@@ -22,6 +22,7 @@ let genderState = 0;
   let respondedaud;
   let diditwake;
   let cantsafeaud;
+  let promisedtaud;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
 let ring,dial;
@@ -92,7 +93,8 @@ function preload(){
   cprD = loadImage("d.png");
   checkdangeraud =loadSound("ElevenLabs_2025-06-15T03_04_45_Alice_pre_sp100_s50_sb75_v3.mp3");
   notsafeaud = loadSound("ElevenLabs_2025-06-15T05_45_53_Alice_pre_sp100_s50_sb75_v3.mp3");
-  cantsafeaud = loadSound("ElevenLabs_2025-11-04T07_34_48_Alice_pre_sp100_s50_sb75_v3.mp3");
+  cantsafeaud = loadSound("ElevenLabs_2025-11-04T08_34_33_Alice_pre_sp100_s50_sb75_v3.mp3");
+  promisedtaud = loadSound("ElevenLabs_2025-11-04T07_34_48_Alice_pre_sp100_s50_sb75_v3.mp3");
   cprR = loadImage("r.png");
   checkresponseaud = loadSound("check_for_response.mp3"); 
   cprD_yes = loadImage("Dnot safe.png");
