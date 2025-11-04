@@ -305,6 +305,7 @@ function draw(){
     if(vol > 0.15){
     console.log("hello i am okay");
    // okayVoice.play();
+    respondedaud.play();
     responseState = 1;
     console.log(responseState);
   }else
@@ -316,7 +317,6 @@ function draw(){
     
       if(responseState === 1){
         currentState = "wake";
-        respondedaud.play;
         //cprR_aud.stop();
         
       }
@@ -325,7 +325,7 @@ function draw(){
       if(millis()-response_time > 10000){
       currentState = "cpr_check_response";
       checkresponseaud.stop();
-      diditwake.play();
+      couldobserveb.play();
       }
     }else if(currentState === "wake"){
     background("#F35F3C");
