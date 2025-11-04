@@ -411,6 +411,24 @@ function draw(){
     }else if(currentState === "late"){
     background("#FFC5B7");
     image(late,width/2,height/2);
+    }else if(currentState === "promiseLT"){
+    background("#F35F3C");
+    if(genderState === 1){
+      image(promiseLTM,width/2,height/2);
+    }else if(genderState === 2){
+    image(promiseLT,width/2,height/2);
+    }
+      if(millis() - promise_start >3000){
+      currentState = "promiseLP";
+    }
+    
+    }else if(currentState === "promiseLP"){
+    background("#F35F3C");
+    if(genderState === 1){
+      image(promiseLPM,width/2,height/2);
+    }else if(genderState === 2){
+    image(promiseLP,width/2,height/2);
+    }
     }else if(currentState === "promiseT"){
     background("#F35F3C");
     image(promiseT,width/2,height/2);
@@ -893,8 +911,20 @@ function mousePressed(){
       mouseY > lasty &&
       mouseY < lasty + lasth
     ){
-      currentState = "promiseT";
+      currentState = "promiseLT";
      promise_start = millis();
+      console.log(currentState);
+    }
+     
+  }else if(currentState == "promiseLP"){
+   if (
+      mouseX > promisex &&
+      mouseX < promisex + promisew &&
+      mouseY > promisey &&
+      mouseY < promisey + promiseh
+    ){
+      currentState = "promise_seal";
+     promise_sound.play();
       console.log(currentState);
     }
      
