@@ -626,6 +626,7 @@ function mousePressed(){
     ) {
       currentState = "promiseDT";
       cantsafeaud.stop();
+      promisedtaud.play();
        promise_start = millis();
       console.log(currentState);
       }
@@ -638,6 +639,7 @@ function mousePressed(){
     ){
       currentState = "promise_seal";
      promisesealedaud.play();
+     promisedtaud.stop();
      promise_sound.play();
       console.log(currentState);
     }
