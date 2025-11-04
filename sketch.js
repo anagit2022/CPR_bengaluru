@@ -96,7 +96,7 @@ function preload(){
   cprD_yes = loadImage("Dnot safe.png");
   dcantsafe = loadImage("Dcan't safe (3).png");
   check_response = loadImage("response check.png");
-  diditwake = loadImage("did_spongy_respond.mp3");
+  diditwake = loadSound("did_spongy_respond.mp3");
   responded = loadImage("responded.png");
   wake = loadImage("giffycanvas - 2025-11-03T203702.641.gif");
   respondedaud = loadSound("I_am_ok.mp3");
