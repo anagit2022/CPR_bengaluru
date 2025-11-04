@@ -27,7 +27,7 @@ let genderState = 0;
   let promisebtaud;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
-  let victim;
+  let victim,victimaud;
   let callaud,call112aud,addspeakeraud;
 let ring,dial;
 // AED
@@ -121,6 +121,7 @@ function preload(){
   cprCalling = loadImage("addspeaker (1).png");
   speakeradded = loadImage("speaker added.png");
   victim = loadImage("incardiacarrest.png"):
+  victimaud = loadSound("ElevenLabs_2025-11-04T17_32_18_Alice_pre_sp100_s50_sb75_v3.mp3");
   ring = loadSound("mixkit-office-telephone-ring-1350.wav");
   dial = loadSound("9aud.mp3");
   // AED
@@ -402,7 +403,8 @@ function draw(){
     background("#F35F3C");
     image(speakeradded,width/2,height/2);
     if(millis()- call_time > 600){
-       currentState ="victim";    
+       currentState ="victim";   
+       victimaud.play();
        console.log(currentState);
      }
     }else if(currentState === "victim"){
@@ -410,6 +412,7 @@ function draw(){
     image(victim,width/2,height/2);
      if(millis()- call_time > 1800){
        currentState ="cprC1";
+       victimaud.stop();
       cprtime = millis();
       
        console.log(currentState);
