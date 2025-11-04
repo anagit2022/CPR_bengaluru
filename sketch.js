@@ -325,7 +325,6 @@ function draw(){
       if(millis()-response_time > 10000){
       currentState = "cpr_check_response";
       checkresponseaud.stop();
-      couldobserveb.play();
       }
     }else if(currentState === "wake"){
     background("#F35F3C");
@@ -358,7 +357,7 @@ function draw(){
     breathtimepass = millis() - breath_time;
     if( breathtimepass >10000){
       currentState = "breath_Check";
-      checkbreathingaud.play();
+      couldobserveb.play();
     }
   }else if(currentState === "breath_Check"){
     background("#F35F3C");
@@ -684,6 +683,8 @@ function mousePressed(){
       mouseY < yesy + yesh
     ) {
       currentState = "check_b_type";
+      couldobserveb.stop();
+      normal_abnormalbaud.play();
       console.log(currentState);
       } else if (
       mouseX > nox &&
