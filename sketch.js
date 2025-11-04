@@ -545,6 +545,7 @@ function mousePressed(){
       mouseY < rajay + rajah
     ) {
       currentState = "intro";
+      introaud.play();
       genderState = 1;
       console.log(currentState);
       }else if (
@@ -554,6 +555,7 @@ function mousePressed(){
       mouseY < raniy + ranih
     ) {
       currentState = "intro";
+      introaud.play();
       genderState = 2;
       console.log(currentState);
       }
@@ -565,6 +567,7 @@ function mousePressed(){
       mouseY < nexty + nexth
     ) {
       currentState = "cprD";
+      introaud.stop();
       console.log(currentState);
       }
   }else if(currentState == "cprD"){
