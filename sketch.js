@@ -324,6 +324,7 @@ function draw(){
      // text(millis()-response_time,50,50);
       if(millis()-response_time > 10000){
       currentState = "cpr_check_response";
+      diditwake.play();
       checkresponseaud.stop();
       }
     }else if(currentState === "wake"){
