@@ -302,7 +302,7 @@ function draw(){
     image(cprR,width/2,height/2);
      vol = mic.getLevel();
      console.log(vol);
-    if(vol > 0.3){
+    if(vol > 0.15){
     console.log("hello i am okay");
    // okayVoice.play();
     responseState = 1;
@@ -316,6 +316,7 @@ function draw(){
     
       if(responseState === 1){
         currentState = "wake";
+        respondedaud.play;
         //cprR_aud.stop();
         
       }
@@ -323,6 +324,8 @@ function draw(){
      // text(millis()-response_time,50,50);
       if(millis()-response_time > 10000){
       currentState = "cpr_check_response";
+      checkresponseaud.stop();
+      diditwake.play();
       }
     }else if(currentState === "wake"){
     background("#F35F3C");
@@ -351,9 +354,11 @@ function draw(){
     }else if(currentState === "cprB"){
     background("#FFC5B7");
     image(cprB,width/2,height/2);
+    diditwake.stop();
     breathtimepass = millis() - breath_time;
     if( breathtimepass >10000){
       currentState = "breath_Check";
+      checkbreathingaud.play();
     }
   }else if(currentState === "breath_Check"){
     background("#F35F3C");
@@ -657,6 +662,7 @@ function mousePressed(){
       mouseY < noy + noh
     ) {
        currentState = "cprB";
+       checkbreathingaud.play();
         breath_time = millis();
        if(breath_no % 3 === 0)
        {
@@ -880,6 +886,7 @@ function mousePressed(){
       mouseY < lasty + lasth
     ){
       currentState = "promiseRT";
+     checkresponseaud.stop();
      promise_start = millis();
       console.log(currentState);
     }
