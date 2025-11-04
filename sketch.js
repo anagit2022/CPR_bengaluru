@@ -117,7 +117,7 @@ function preload(){
   checkbreathingaud = loadSound("check_if_breathing.mp3");
   couldobserveb = loadSound("could_you_see_breathing.mp3");
   normal_abnormalbaud = loadSound("ElevenLabs_2025-06-18T03_04_36_Alice_pre_sp100_s50_sb75_v3.mp3");
-  ifbreathnormalaud = loadSound("ElevenLabs_2025-06-17T23_01_53_Alice_pre_sp100_s50_sb75_v3.mp3"):
+  ifbreathnormalaud = loadSound("ElevenLabs_2025-06-17T23_01_53_Alice_pre_sp100_s50_sb75_v3.mp3");
   gasp_aud = loadSound("gasping.m4a");
   breath_check = loadImage("breathing check.png");
   check_b_type = loadImage("btypecheck.png");
