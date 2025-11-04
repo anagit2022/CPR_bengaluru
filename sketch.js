@@ -573,6 +573,7 @@ function mousePressed(){
     ) {
       currentState = "cprD";
       introaud.stop();
+      checkdangeraud.play();
       console.log(currentState);
       }
   }else if(currentState == "cprD"){
@@ -583,6 +584,7 @@ function mousePressed(){
       mouseY < yesy + yesh
     ) {
       currentState = "cprR";
+      checkdangeraud.stop();
       response_time = millis();
       console.log(currentState);
       }else if (
@@ -593,6 +595,7 @@ function mousePressed(){
     ) {
       currentState = "cprD_yes";
       notsafeaud.play();
+      checkdangeraud.stop();
       console.log(currentState);
       }
   }else if(currentState == "cprD_yes"){
