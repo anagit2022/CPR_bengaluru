@@ -26,7 +26,7 @@ let genderState = 0;
   let promisertaud;
   let promisebtaud;
   let promiseltaud;
-  let promisewinaud;
+  let promisewtaud;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
   let victim,victimaud;
@@ -197,8 +197,8 @@ function preload(){
   // promise sounds 
 promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
 promisesealedaud = loadSound("Promise sealed ghar  (1).mp3");
-promiseltaud = loadSound("");
-promisewinaud = loadSound("");
+promiseltaud = loadSound("ElevenLabs_2025-11-05T06_57_34_Alice_pre_sp100_s50_sb75_v3.mp3");
+promisewtaud = loadSound("ElevenLabs_2025-11-05T06_53_28_Alice_pre_sp100_s50_sb75_v3.mp3");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
@@ -955,6 +955,7 @@ function mousePressed(){
       mouseY < lasty + lasth
     ){
       currentState = "promiseT";
+     promisewinaud.play();
      promise_start = millis();
       console.log(currentState);
     }
@@ -995,6 +996,7 @@ function mousePressed(){
       mouseY < lasty + lasth
     ){
       currentState = "promiseT";
+     promisewtaud.play();
      promise_start = millis();
       console.log(currentState);
     }
@@ -1007,6 +1009,7 @@ function mousePressed(){
       mouseY < lasty + lasth
     ){
       currentState = "promiseT";
+     promisewtaud.play();
      promise_start = millis();
       console.log(currentState);
     }
@@ -1020,6 +1023,7 @@ function mousePressed(){
     ){
       currentState = "promise_seal";
      promise_sound.play();
+     promisewtaud.stop();
      promisesealedaud.play();
       console.log(currentState);
     }
@@ -1045,6 +1049,7 @@ function mousePressed(){
     ){
       currentState = "promiseLT";
      promise_start = millis();
+     promiseltaud.play();
       console.log(currentState);
     }
      
@@ -1058,6 +1063,8 @@ function mousePressed(){
       currentState = "promise_seal";
      promise_sound.play();
       promisesealedaud.play();
+     promisewtaud.stop();
+     promiseltaud.stop();
       console.log(currentState);
     }
      
