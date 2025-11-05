@@ -145,7 +145,7 @@ function preload(){
   cprC2aud = loadSound("ElevenLabs_2025-06-25T03_15_33_Alice_pre_sp100_s50_sb75_v3.mp3");
   cprC3aud = loadSound("ElevenLabs_2025-06-16T00_04_57_Alice_pre_sp100_s50_sb75_v3.mp3");
   cprC4aud = loadSound("ElevenLabs_2025-06-25T03_12_37_Alice_pre_sp100_s50_sb75_v3.mp3");
-  cprBeginaud = loadSound(""):
+  cprBeginaud = loadSound("ElevenLabs_2025-11-05T03_21_18_Alice_pre_sp100_s50_sb75_v3.mp3"):
   cprC2 = loadImage("interlock (3).png");
   cprC3 = loadImage("straight elbows (3).png");
   cprC4 = loadImage("giffycanvas - 2025-10-31T204304.927.gif");
@@ -419,6 +419,7 @@ function draw(){
      if(millis()- call_time > 2500){
        currentState ="cprC1";
        victimaud.stop();
+       cprC1aud.play();
       cprtime = millis();
       
        console.log(currentState);
@@ -427,6 +428,8 @@ function draw(){
       cprtpass = millis()-cprtime;
     if(cprtpass > 6000){
       currentState = "cprC2";
+      cprC1aud.stop();
+      cprC2aud.play();
 } 
     background("#F35F3C");
     image(cprC1,width/2,height/2);
@@ -434,6 +437,8 @@ function draw(){
       cprtpass = millis()-cprtime;
     if(cprtpass > 14000){
       currentState = "cprC3";
+      cprC2aud.stop();
+      cprC3aud.play();
 } 
     background("#F35F3C");
     image(cprC2,width/2,height/2);
@@ -441,6 +446,8 @@ function draw(){
       cprtpass = millis()-cprtime;
     if(cprtpass > 20000){
       currentState = "cprC4";
+      cprC3aud.stop();
+      cprC4aud.play();
 } 
     background("#F35F3C");
     image(cprC3,width/2,height/2);
@@ -450,11 +457,14 @@ function draw(){
        cprtpass = millis()-cprtime;
     if(cprtpass > 30000){
       currentState = "cprBegin";
+      cprC4aud.stop();
+      cprBegin.play();
 } 
     }else if(currentState === "cprBegin"){
     background("#F35F3C");
     image(cprBegin,width/2,height/2);
     }else if(currentState === "play"){
+     cprBegin.stop();
     playScreen();
     }else if(currentState === "win"){
     background("#FFC5B7");
