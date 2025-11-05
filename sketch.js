@@ -137,7 +137,7 @@ function preload(){
   breath_check = loadImage("breathing check.png");
   check_b_type = loadImage("btypecheck.png");
   normal_breath = loadImage("normalbreathing.png");
-  promisebtaud = loadImage("ElevenLabs_2025-11-04T11_55_06_Alice_pre_sp100_s50_sb75_v3.mp3"):
+  promisebtaud = loadImage("ElevenLabs_2025-11-04T11_55_06_Alice_pre_sp100_s50_sb75_v3.mp3");
   // cpr compressions instructions
   cprC1 = loadImage("giffycanvas - 2025-10-31T203941.669.gif");
   cprC2 = loadImage("interlock (3).png");
