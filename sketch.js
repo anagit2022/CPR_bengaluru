@@ -25,6 +25,8 @@ let genderState = 0;
   let promisedtaud;
   let promisertaud;
   let promisebtaud;
+  let promiseltaud;
+  let promisewinaud;
 //call 112 or shout
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
   let victim,victimaud;
@@ -195,6 +197,8 @@ function preload(){
   // promise sounds 
 promise_sound = loadSound("mixkit-happy-bells-notification-937.wav");
 promisesealedaud = loadSound("Promise sealed ghar  (1).mp3");
+promiseltaud = loadSound("");
+promisewinaud = loadSound("");
 }
 function setup(){
   createCanvas(windowWidth,windowHeight);
