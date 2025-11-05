@@ -1033,6 +1033,7 @@ function mousePressed(){
     ){
       currentState = "promise_seal";
      promise_sound.play();
+      promisesealedaud.play();
       console.log(currentState);
     }
      
