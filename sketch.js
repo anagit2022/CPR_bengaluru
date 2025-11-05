@@ -410,7 +410,7 @@ function draw(){
     }else if(currentState === "victim"){
     background("#F35F3C");
     image(victim,width/2,height/2);
-     if(millis()- call_time > 1800){
+     if(millis()- call_time > 2500){
        currentState ="cprC1";
        victimaud.stop();
       cprtime = millis();
