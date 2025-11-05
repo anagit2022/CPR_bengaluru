@@ -421,7 +421,7 @@ function draw(){
     }else if(currentState === "victim"){
     background("#F35F3C");
     image(victim,width/2,height/2);
-     if(millis()- call_time > 4000){
+     if(millis()- call_time > 10000){
        currentState ="cprC1";
        victimaud.stop();
        cprC1aud.play();
@@ -871,6 +871,8 @@ function mousePressed(){
       mouseY < nexty + nexth
     ) {
       currentState = "cprC2";
+      cprC1aud.stop();
+      cprC2aud.play();
       console.log(currentState);
       }
   }else if(currentState == "cprC2"){
@@ -881,6 +883,9 @@ function mousePressed(){
       mouseY < nexty + nexth
     ) {
       currentState = "cprC3";
+      cprC2aud.stop();
+      cprC1aud.stop();
+      cprC3aud.play();
       console.log(currentState);
       }
   }else if(currentState == "cprC3"){
@@ -891,6 +896,10 @@ function mousePressed(){
       mouseY < nexty + nexth
     ) {
       currentState = "cprC4";
+      cprC3aud.stop();
+      cprC2aud.stop();
+      cprC1aud.stop();
+      cprC4aud.play();
       console.log(currentState);
       }
   }else if(currentState == "cprC4"){
@@ -901,6 +910,11 @@ function mousePressed(){
       mouseY < nexty + nexth
     ) {
       currentState = "cprBegin";
+      cprC4aud.stop();
+      cprC3aud.stop();
+      cprC2aud.stop();
+      cprC1aud.stop();
+      cprBeginaud.play();
       console.log(currentState);
       }
   }else if(currentState == "cprBegin"){
@@ -1209,7 +1223,7 @@ function handle_performance(){
         ambaud.play();
       }else if (diffGoal >= 20){
         currentState = "late";
-       lateaud.play();
+        lateaud.play();
         
       }
     }
