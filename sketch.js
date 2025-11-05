@@ -46,7 +46,8 @@ let couldobserveb;
 let normal_abnormalbaud;
 let ifbreathnormalaud;
 //cpr compressions instructions
-let cprC1;
+let cprC1,cprC2,cprC3,cprC4,cprBegin;
+let cprC1aud,cprC2aud,cprC3aud,cprC4aud,cprBeginaud;
 let cprtime = 0;
 let cprtpass = 0;
 let compression_count = 0;
@@ -140,6 +141,11 @@ function preload(){
   promisebtaud = loadSound("ElevenLabs_2025-11-04T11_55_06_Alice_pre_sp100_s50_sb75_v3.mp3");
   // cpr compressions instructions
   cprC1 = loadImage("giffycanvas - 2025-10-31T203941.669.gif");
+  cprC1aud = loadSound("ElevenLabs_2025-06-28T05_17_33_Alice_pre_sp100_s50_sb75_v3.mp3");
+  cprC2aud = loadSound("ElevenLabs_2025-06-25T03_15_33_Alice_pre_sp100_s50_sb75_v3.mp3");
+  cprC3aud = loadSound("ElevenLabs_2025-06-16T00_04_57_Alice_pre_sp100_s50_sb75_v3.mp3");
+  cprC4aud = loadSound("ElevenLabs_2025-06-25T03_12_37_Alice_pre_sp100_s50_sb75_v3.mp3");
+  cprBeginaud = loadSound(""):
   cprC2 = loadImage("interlock (3).png");
   cprC3 = loadImage("straight elbows (3).png");
   cprC4 = loadImage("giffycanvas - 2025-10-31T204304.927.gif");
