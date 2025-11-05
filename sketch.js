@@ -443,6 +443,7 @@ function draw(){
     if(cprtpass > 14000){
       currentState = "cprC3";
       cprC2aud.stop();
+      cprC1aud.stop();
       cprC3aud.play();
 } 
     background("#F35F3C");
@@ -452,6 +453,8 @@ function draw(){
     if(cprtpass > 20000){
       currentState = "cprC4";
       cprC3aud.stop();
+      cprC2aud.stop();
+      cprC1aud.stop();
       cprC4aud.play();
 } 
     background("#F35F3C");
@@ -463,7 +466,10 @@ function draw(){
     if(cprtpass > 30000){
       currentState = "cprBegin";
       cprC4aud.stop();
-      cprBegin.play();
+      cprC3aud.stop();
+      cprC2aud.stop();
+      cprC1aud.stop();
+      cprBeginaud.play();
 } 
     }else if(currentState === "cprBegin"){
     background("#F35F3C");
@@ -1197,7 +1203,7 @@ function handle_performance(){
         //win_music.play();
       }else if(diffGoal <= 8){
         currentState = "aed";
-        aeedaud.play();
+        aedaud.play();
       }else if(diffGoal <= 10){
         currentState = "amb";
         ambaud.play();
