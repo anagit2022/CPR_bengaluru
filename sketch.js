@@ -464,7 +464,6 @@ function draw(){
     background("#F35F3C");
     image(cprBegin,width/2,height/2);
     }else if(currentState === "play"){
-     cprBegin.stop();
     playScreen();
     }else if(currentState === "win"){
     background("#FFC5B7");
