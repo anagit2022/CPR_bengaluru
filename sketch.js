@@ -340,7 +340,7 @@ function draw(){
       checkresponseaud.stop();
       }
     }else if(currentState === "wake"){
-    background("#F35F3C");
+    background("#FFC5B7");
     image(wake,width/2,height/2);
     }else if(currentState === "promiseRT"){
     background("#F35F3C");
