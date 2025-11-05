@@ -76,6 +76,7 @@ let good_compression = 0;
 let diffGoal = 0;
 // win screens
 let win,aed,amb,late;
+let winaud,aedaud,ambaud,lateaud;
 // promise screen
 let promiseT,promiseTM,promiseP,promisePM,promiseS,promiseSM,promiseDT,promiseDTM;
 let promiseNBT,promiseNBTM,promiseNBP,promiseNBPM;
@@ -161,6 +162,10 @@ function preload(){
   aed = loadImage("giffycanvas (89).gif");
   amb = loadImage("amb.gif");
   late = loadImage("delayed.png");
+  winaud = loadSound("mixkit-fairy-arcade-sparkle-866.wav");
+  aedaud = loadSound("ElevenLabs_2025-06-16T12_58_21_Alice_pre_sp100_s50_sb75_v3.mp3");
+  ambaud = loadSound("ambulance-312230.mp3");
+  lateaud = loadSound("negative_beeps-6008.mp3");
   // promise screen
   promiseT = loadImage("giffycanvas - 2025-10-29T083935.786.gif");
   promiseTM = loadImage("giffycanvas - 2025-10-29T161641.860.gif");
@@ -1187,16 +1192,17 @@ function handle_performance(){
 
       if(diffGoal <= 5){
         currentState = "win";
+        winaud.play();
         //win_music.play();
       }else if(diffGoal <= 8){
         currentState = "aed";
-        //cprAed_found_aud.play();
+        aeedaud.play();
       }else if(diffGoal <= 10){
         currentState = "amb";
-        //amb_aud.play();
+        ambaud.play();
       }else if (diffGoal >= 20){
         currentState = "late";
-        //delayed_aud.play();
+       lateaud.play();
         
       }
     }
