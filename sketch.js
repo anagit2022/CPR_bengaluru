@@ -120,7 +120,7 @@ function preload(){
   call112 = loadImage("call 112.png");
   cprCalling = loadImage("addspeaker (1).png");
   speakeradded = loadImage("speaker added.png");
-  victim = loadImage("incardiacarrest.png"):
+  victim = loadImage("incardiacarrest.png");
   victimaud = loadSound("ElevenLabs_2025-11-04T17_32_18_Alice_pre_sp100_s50_sb75_v3.mp3");
   ring = loadSound("mixkit-office-telephone-ring-1350.wav");
   dial = loadSound("9aud.mp3");
