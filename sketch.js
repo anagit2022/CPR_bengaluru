@@ -864,6 +864,7 @@ function mousePressed(){
       mouseY < speakery + speakerh
     ) {
       currentState = "speakeradded";
+      addspeakeraud.stop();
       console.log(currentState);
       call_time = millis();
       }
@@ -955,7 +956,7 @@ function mousePressed(){
       mouseY < lasty + lasth
     ){
       currentState = "promiseT";
-     promisewinaud.play();
+     promisewtaud.play();
      promise_start = millis();
       console.log(currentState);
     }
