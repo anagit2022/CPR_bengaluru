@@ -575,7 +575,7 @@ function draw(){
     }
 
   // debug helpers
-  fill(0);
+  /*fill(0);
   text("x : " + mouseX,40,40);
    text(" y : " + mouseY,80,40);
   text("width/2 : " + width ,120,40);
@@ -583,7 +583,7 @@ function draw(){
   text("bno: "+breath_no ,350,40);
    text("s: "+currentState ,200,180);
   text("v: "+vol ,250,140);
-  //______________________________________
+  *///______________________________________
   
 }
 function mousePressed(){
