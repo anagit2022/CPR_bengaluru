@@ -575,15 +575,15 @@ function draw(){
     }
 
   // debug helpers
-  /*fill(0);
-  text("x : " + mouseX,40,40);
-   text(" y : " + mouseY,80,40);
-  text("width/2 : " + width ,120,40);
-  text(" height/2 : " + height ,200,40);
-  text("bno: "+breath_no ,350,40);
-   text("s: "+currentState ,200,180);
-  text("v: "+vol ,250,140);
-  *///______________________________________
+  //fill(0);
+ // text("x : " + mouseX,40,40);
+  // text(" y : " + mouseY,80,40);
+  //text("width/2 : " + width ,120,40);
+  //text(" height/2 : " + height ,200,40);
+  //text("bno: "+breath_no ,350,40);
+   //text("s: "+currentState ,200,180);
+ // text("v: "+vol ,250,140);
+  //______________________________________
   
 }
 function mousePressed(){
