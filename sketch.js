@@ -31,6 +31,7 @@ let genderState = 0;
   let call,callblank,call1,call11,call112,cprCalling,speakeradded;
   let victim,victimaud;
   let callaud,call112aud,addspeakeraud;
+  let speakertime = 0;
 let ring,dial;
 // AED
 let cprA;
@@ -417,7 +418,7 @@ function draw(){
     }else if(currentState === "speakeradded"){
     background("#F35F3C");
     image(speakeradded,width/2,height/2);
-    if(millis()- call_time > 600){
+    if(millis()- speakertime > 10000){
        currentState ="victim";   
        victimaud.play();
        console.log(currentState);
@@ -867,6 +868,7 @@ function mousePressed(){
       addspeakeraud.stop();
       console.log(currentState);
       call_time = millis();
+      speakertime = millis();
       }
   }else if(currentState == "cprC1"){
     if (
