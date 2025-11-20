@@ -418,7 +418,7 @@ function draw(){
     }else if(currentState === "speakeradded"){
     background("#F35F3C");
     image(speakeradded,width/2,height/2);
-    if(millis()- speakertime > 10000){
+    if(millis()- call_time > 10000){
        currentState ="victim";   
        victimaud.play();
        console.log(currentState);
@@ -426,7 +426,7 @@ function draw(){
     }else if(currentState === "victim"){
     background("#F35F3C");
     image(victim,width/2,height/2);
-     if(millis()- call_time > 10000){
+     if(millis()- call_time > 20000){
        currentState ="cprC1";
        victimaud.stop();
        cprC1aud.play();
