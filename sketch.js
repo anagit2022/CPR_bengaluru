@@ -211,10 +211,10 @@ function setup(){
   mic.start();
   imageMode(CENTER);
   // begin button
-  beginx = windowWidth * 0.2;
-  beginy = windowHeight * 0.8;
-  beginw = windowWidth * 0.36;      // was 142
-  beginh = windowHeight * 0.056;    // was 47
+  beginx = windowWidth * 0.18;
+  beginy = windowHeight * 0.74;
+  beginw = windowWidth * 0.57;      // was 142
+  beginh = windowHeight * 0.11;    // was 47
   
   // raja button
   rajax = windowWidth * 0.2;
