@@ -241,10 +241,10 @@ function setup(){
   sqnexth = windowHeight * 0.066;   // was 56
   
   // no button
-  nox = windowWidth * 0.1;
-  noy = windowHeight * 0.86;
+  nox = windowWidth * 0.06;
+  noy = windowHeight * 0.84;
   now = windowWidth * 0.36;         // was 142
-  noh = windowHeight * 0.056;       // was 47
+  noh = windowHeight * 0.076;       // was 47
   
   // yes button
   yesx = windowWidth * 0.5;
