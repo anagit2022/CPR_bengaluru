@@ -211,124 +211,105 @@ function setup(){
   mic.start();
   imageMode(CENTER);
   // begin button
-  beginx = windowWidth * 0.18;
-  beginy = windowHeight * 0.74;
-  beginw = windowWidth * 0.57;      // was 142
-  beginh = windowHeight * 0.11;    // was 47
-  
+  beginx = windowWidth*0.2;
+  beginy = windowHeight*0.8;
+  beginw = 142;
+  beginh = 47;
   // raja button
-  rajax = windowWidth * 0.2;
-  rajay = windowHeight * 0.86;
-  rajaw = windowWidth * 0.36;       // was 142
-  rajah = windowHeight * 0.056;     // was 47
-  
+  rajax = windowWidth*0.2;
+  rajay = windowHeight*0.86;
+  rajaw = 142;
+  rajah = 47;
   // rani button
-  ranix = windowWidth * 0.5;
-  raniy = windowHeight * 0.86;
-  raniw = windowWidth * 0.36;       // was 142
-  ranih = windowHeight * 0.056;     // was 47
-  
+  ranix = windowWidth*0.5;
+  raniy = windowHeight*0.86;
+  raniw = 142;
+  ranih = 47;
   // next button
-  nextx = windowWidth * 0.8;
-  nexty = windowHeight * 0.9;
-  nextw = windowWidth * 0.13;       // was 50
-  nexth = windowHeight * 0.06;      // was 50
-  
+  nextx= windowWidth*0.8;
+  nexty= windowHeight*0.9;
+  nextw= 50;
+  nexth=50;
   // sq next button
-  sqnextx = windowWidth * 0.75;
-  sqnexty = windowHeight * 0.85;
-  sqnextw = windowWidth * 0.14;     // was 56
-  sqnexth = windowHeight * 0.066;   // was 56
-  
+  sqnextx= windowWidth*0.75;
+  sqnexty= windowHeight*0.85;
+  sqnextw= 56;
+  sqnexth=56;
   // no button
-  nox = windowWidth * 0.06;
-  noy = windowHeight * 0.84;
-  now = windowWidth * 0.36;         // was 142
-  noh = windowHeight * 0.076;       // was 47
-  
+ nox = windowWidth*0.1;
+ noy =windowHeight*0.86; 
+ now = 142;
+ noh= 47;
   // yes button
-  yesx = windowWidth * 0.5;
-  yesy = windowHeight * 0.86;
-  yesw = windowWidth * 0.36;        // was 142
-  yesh = windowHeight * 0.056;      // was 47
-  
+  yesx =windowWidth*0.5 ;
+  yesy = windowHeight*0.86;
+  yesw = 142;
+  yesh= 47;
   // call 1
-  call1x = windowWidth * 0.2;
-  call1y = windowHeight * 0.4;
-  call1w = windowWidth * 0.15;      // was 60
-  call1h = windowWidth * 0.15;      // was 60 (using width for square!)
-  
-  // call 0
-  call0x = windowWidth * 0.4;
-  call0y = windowHeight * 0.7;
-  call0w = windowWidth * 0.15;      // was 60
-  call0h = windowWidth * 0.15;      // was 60
-  
+  call1x =windowWidth*0.2; 
+  call1y = windowHeight*0.4;
+  call1w = 60;
+  call1h = 60 ;
+  // call 0 
+  call0x =windowWidth*0.4;  
+  call0y = windowHeight*0.7; 
+  call0w =60 ;
+  call0h =60 ;
   // call 8
-  call8x = windowWidth * 0.4;
-  call8y = windowHeight * 0.6;
-  call8w = windowWidth * 0.15;      // was 60
-  call8h = windowWidth * 0.15;      // was 60
-  
+  call8x =windowWidth*0.4;  
+  call8y = windowHeight*0.6; 
+  call8w =60 ;
+  call8h =60 ;
   // call 2
-  call2x = windowWidth * 0.45;
-  call2y = windowHeight * 0.43;
-  call2w = windowWidth * 0.15;      // was 60
-  call2h = windowWidth * 0.15;      // was 60
-  
+  call2x =windowWidth*0.45;  
+  call2y = windowHeight*0.43; 
+  call2w =60 ;
+  call2h =60 ;
   // call ring
-  callx = windowWidth * 0.4;
-  cally = windowHeight * 0.8;
-  callw = windowWidth * 0.15;       // was 60
-  callh = windowWidth * 0.15;       // was 60
-  
+  callx =windowWidth*0.4;  
+  cally = windowHeight*0.8; 
+  callw =60 ;
+  callh =60 ;
   // speaker add
-  speakerx = windowWidth * 0.64;
-  speakery = windowHeight * 0.82;
-  speakerw = windowWidth * 0.15;    // was 60
-  speakerh = windowWidth * 0.15;    // was 60
-  
+  speakerx =windowWidth*0.64;  
+  speakery = windowHeight*0.82; 
+  speakerw =60 ;
+  speakerh =60 ;
   // doneAed
-  donex = windowWidth * 0.3;
-  doney = windowHeight * 0.85;
-  donew = windowWidth * 0.36;       // was 142
-  doneh = windowHeight * 0.056;     // was 47
-  
+  donex =windowWidth*0.3;  
+  doney = windowHeight*0.85; 
+  donew =142 ;
+  doneh =47 ;
   // normal breathing
-  normalx = windowWidth * 0.1;
-  normaly = windowHeight * 0.86;
-  normalw = windowWidth * 0.36;     // was 142
-  normalh = windowHeight * 0.056;   // was 47
-  
+  normalx =windowWidth*0.1;  
+  normaly = windowHeight*0.86; 
+  normalw =142 ;
+  normalh =47 ;
   // abnormal breathing
-  abnormalx = windowWidth * 0.5;
-  abnormaly = windowHeight * 0.86;
-  abnormalw = windowWidth * 0.36;   // was 142
-  abnormalh = windowHeight * 0.056; // was 47
-  
-  // cpr compression press area
-  cpressx = windowWidth * 0.8;
-  cpressy = windowHeight * 0.4;
-  cpressw = windowWidth * 0.115;    // was 45
-  cpressh = windowHeight * 0.13;    // was 111
-  
+  abnormalx =windowWidth*0.5;  
+  abnormaly = windowHeight*0.86; 
+  abnormalw =142 ;
+  abnormalh =47 ;
+  //cpr compression press area
+  cpressx = 0.8*windowWidth;
+  cpressy = 0.4*windowHeight;
+  cpressw = 45;
+  cpressh = 111;
   // win screen next button
-  lastx = windowWidth * 0.8;
-  lasty = windowHeight * 0.02;
-  lastw = windowWidth * 0.14;       // was 55
-  lasth = windowHeight * 0.065;     // was 55
-  
+  lastx = 0.8*windowWidth;
+  lasty = 0.02*windowHeight;
+  lastw = 55;
+ lasth = 55;
   // promise press space
-  promisex = windowWidth * 0.6;
-  promisey = windowHeight * 0.58;
-  promisew = windowWidth * 0.146;   // was 57
-  promiseh = windowHeight * 0.107;  // was 90
-  
+  promisex = 0.6*windowWidth;
+  promisey = 0.58*windowHeight;
+  promisew = 57;
+  promiseh = 90;
   // replay button
-  replayx = windowWidth * 0.26;
-  replayy = windowHeight * 0.84;
-  replayw = windowWidth * 0.47;     // was 185
-  replayh = windowHeight * 0.063;   // was 53
+  replayx = 0.26*windowWidth;
+  replayy = 0.84*windowHeight;
+  replayw = 185;
+  replayh = 53;
 }
 function draw(){
   if(currentState=== "begin"){
@@ -1285,4 +1266,5 @@ function touchStarted() {
   mousePressed(); // Use the same logic
   return false; // Prevent default browser touch behavior
 }
+
 
